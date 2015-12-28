@@ -1,7 +1,7 @@
 {
   "name": "nekobato.net",
   "version": "1.0.0",
-  "description": "nekobato",
+  "description": "nekobato.net",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -17,9 +17,9 @@
   "author": "nekobato",
   "license": "nekobato",
   "bugs": {
-    "url": "https://github.com/nekobato/nekobato/issues"
+    "url": "https://github.com/nekobato/nekobato.net/issues"
   },
-  "homepage": "https://github.com/nekobato/nekobato#readme",
+  "homepage": "https://github.com/nekobato/nekobato.net#readme",
   "devDependencies": {
     "autoprefixer-stylus": "^0.8.1",
     "jade": "^1.11.0",
