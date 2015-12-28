@@ -1,0 +1,28 @@
+{
+  "name": "nekobato.net",
+  "version": "1.0.0",
+  "description": "nekobato",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "style": "stylus -u autoprefixer-stylus -c style.styl > style.css",
+    "html": "jade index.jade",
+    "compile": "npm run style & npm run html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nekobato/nekobato.git"
+  },
+  "keywords": [],
+  "author": "nekobato",
+  "license": "nekobato",
+  "bugs": {
+    "url": "https://github.com/nekobato/nekobato/issues"
+  },
+  "homepage": "https://github.com/nekobato/nekobato#readme",
+  "devDependencies": {
+    "autoprefixer-stylus": "^0.8.1",
+    "jade": "^1.11.0",
+    "stylus": "^0.53.0"
+  }
+}
