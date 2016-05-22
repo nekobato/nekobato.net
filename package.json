@@ -6,9 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "http-server . & npm jade:watch & npm stylus:watch",
-    "jade:watch": "jade src/*.jade -w -o ./",
-    "jade": "jade src/index.jade",
-    "stylus:watch": "stylus -w -C src/*.styl -o ./",
+    "jade:watch": "jade src/*.jade -w -o .",
+    "jade": "jade src/*.jade -o .",
+    "stylus": "stylus src/*.styl -o .",
+    "stylus:watch": "stylus -w src/*.styl -o .",
     "build": "webpack -p"
   },
   "repository": {
