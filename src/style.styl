@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+}
+
+section.links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-160px);
+  margin: auto;
+  width: 320px;
+  height: 320px;
+  border: 10px solid #000;
+  border-radius: 50%;
+  text-align: center;
+
+  h1 {
+  }
+
+  ul {
+    list-style: none;
+    position: absolute;
+
+    & > li {
+
+      a {
+
+        &:before {
+          display: inline-block;
+          content: 'Twitter';
+        }
+      }
+    }
+  }
+}
