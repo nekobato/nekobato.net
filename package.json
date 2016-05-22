@@ -5,7 +5,10 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server",
+    "dev": "http-server . & npm jade:watch & npm stylus:watch",
+    "jade:watch": "jade src/*.jade -w -o ./",
+    "jade": "jade src/index.jade",
+    "stylus:watch": "stylus -w -C src/*.styl -o ./",
     "build": "webpack -p"
   },
   "repository": {
@@ -20,21 +23,12 @@
   },
   "homepage": "https://github.com/nekobato/nekobato.net#readme",
   "devDependencies": {
-    "babel-core": "^6.3.26",
-    "babel-loader": "^6.2.0",
-    "babel-preset-es2015": "^6.3.13",
-    "css-loader": "^0.21.0",
     "jade": "^1.11.0",
-    "jade-loader": "^0.7.1",
-    "json-loader": "^0.5.4",
-    "style-loader": "^0.13.0",
-    "stylus-loader": "^1.4.2",
-    "url-loader": "^0.5.7",
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.12.1",
     "webpack-notifier": "^1.2.1"
   },
   "dependencies": {
-    "vue": "^1.0.17"
+    "materialize-css": "^0.97.6"
   }
 }
