@@ -16,63 +16,59 @@ html
     header
       h1 nekobato.net
     main
-      section(id="profile")
-        h3 こんにちは
-        p nekobatoです
-        section
-          h4 リンクはこちら
-          ul
-            li
-              a(href="http://nekobato.hatenablog.com")
-                div.btn
-                  i.fa.fa-rss.left
-                  | blog
-            li
-              a(href="https://twitter.com/nekobato")
-                div.btn
-                  i.fa.fa-twitter.left
-                  | twitter
-            li
-              a(href="https://github.com/nekobato")
-                div.btn
-                  i.fa.fa-github.left
-                  | github
-            li
-              a(href="mailto:nekobato@gmail.com")
-                div.btn
-                  i.fa.fa-envelope.left
-                  | mail
+      section.align-center(id="profile")
+        div.exhibit-panel
+          img(src="./img/nekobato.png")
+        div.panel
+          span.panel-title 猫鳩
+          span.panel-subtitle nekobato
+          div.panel-action
+            a.action-button(href="http://nekobato.hatenablog.com")
+              i.fa.fa-rss
+              span blog
+            a.action-button(href="https://twitter.com/nekobato")
+              i.fa.fa-twitter
+              span twitter
+            a.action-button(href="https://github.com/nekobato")
+              i.fa.fa-github
+              span github
+            a.action-button(href="mailto:nekobato@gmail.com")
+              i.fa.fa-envelope
+              span email
+            
       section.row.container(id="portfolio")
         h3 つくるったもの
-        div.row
-          section.card.col.s4.offset-s4
-            div.card-image
-              img(src="./img/polidium.png")
-            div.card-content
-              span.card-title Polidium
-              div.card-action
-                a(href="https://github.com/nekobato/Polidium")
-                  div.btn
-                    i.fa.fa-github
-        div.row
-          section.card.col.s4.offset-s4
-            div.card-image
-              img(src="./img/davneko.png")
-            div.card-content
-              span.card-title Davneko
-              div.card-action
-                a(href="https://github.com/nekobato/Davneko")
-                  div.btn
-                    i.fa.fa-github
-        div.row
-          section.card.col.s4.offset-s4
-            div.card-image
-              img(src="./img/endnanonna.gif")
-            div.card-content
-              span.card-title Endnanonna
-              div.card-action
-                a(href="http://endnanonna.nekobato.net/")
-                  div.btn
-                    i.fa.fa-link
+        
+        mixin portfolio(title, image)
+          section.row
+            div.exhibit-panel
+              img(src=image)
+            block
+
+        +portfolio('Polidium', './img/polidium.png')
+          div.panel
+            span.panel-title Polidium
+            span.panel-subtitle 半透明動画プレイヤー
+            div.panel-action
+              a.action-button(href="https://github.com/nekobato/Polidium")
+                i.fa.fa-github
+                span github
+        +portfolio('Davneko', './img/davneko.png')
+          div.panel
+            span.panel-title Davneko
+            span.panel-subtitle webdav音楽プレイヤー
+            div.panel-action
+              a.action-button(href="https://github.com/nekobato/Davneko")
+                i.fa.fa-github
+                span github
+        +portfolio('Endnanonna', './img/endnanonna.gif')
+          div.panel
+            span.panel-title Endnanonna
+            span.panel-subtitle GIFタイトルジェネレーター
+            div.panel-action
+              a.action-button(href="http://endnanonna.nekobato.net/")
+                i.fa.fa-link
+                span website
+
     footer
       p.copyright © 2009-2016 nekobato.net, All rights reserved.
