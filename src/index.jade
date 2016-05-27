@@ -16,31 +16,31 @@ html
     header
       h1 nekobato.net
     main
-      section.align-center(id="profile")
-        div.exhibit-panel
-          img(src="./img/nekobato.png")
-        div.panel
-          span.panel-title 猫鳩
-          span.panel-subtitle nekobato
-          div.panel-action
-            a.action-button(href="http://nekobato.hatenablog.com")
-              i.fa.fa-rss
-              span blog
-            a.action-button(href="https://twitter.com/nekobato")
-              i.fa.fa-twitter
-              span twitter
-            a.action-button(href="https://github.com/nekobato")
-              i.fa.fa-github
-              span github
-            a.action-button(href="mailto:nekobato@gmail.com")
-              i.fa.fa-envelope
-              span email
+      section.container(id="profile")
+        div.row
+          div.exhibit-panel
+            img(src="./img/nekobato.png")
+          div.panel
+            span.panel-title 猫鳩
+            span.panel-subtitle nekobato
+            div.panel-action
+              a.action-button(href="http://nekobato.hatenablog.com")
+                i.fa.fa-rss
+                span blog
+              a.action-button(href="https://twitter.com/nekobato")
+                i.fa.fa-twitter
+                span twitter
+              a.action-button(href="https://github.com/nekobato")
+                i.fa.fa-github
+                span github
+              a.action-button(href="mailto:nekobato@gmail.com")
+                i.fa.fa-envelope
+                span email
             
-      section.row.container(id="portfolio")
-        h3 つくるったもの
+      section.container(id="portfolio")
         
         mixin portfolio(title, image)
-          section.row
+          div.row
             div.exhibit-panel
               img(src=image)
             block

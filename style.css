@@ -7,6 +7,10 @@ html {
   height: 100%;
   text-align: center;
 }
+.row {
+  display: flex;
+  width: 100%;
+}
 .exhibit-panel {
   margin: 20px auto;
   width: 200px;
