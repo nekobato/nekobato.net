@@ -83,12 +83,6 @@ h1 {
   vertical-align: middle;
   -webkit-tap-highlight-color: transparent;
 }
-.panel .action-button:nth-child(1) {
-  margin-left: 0;
-}
-.panel .action-button:nth-child(4) {
-  margin-right: 0;
-}
 .panel .action-button:hover {
   color: #555;
 }
