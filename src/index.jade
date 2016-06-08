@@ -15,11 +15,10 @@ html
   body.center
     header
       h1 nekobato.net
+
     main
-      section.container(id="profile")
-        div.row
-          div.exhibit-panel
-            img(src="./img/nekobato.png")
+      section.type-profile(id="profile")
+        div.row.type-my-panel
           div.panel
             span.panel-title 猫鳩
             span.panel-subtitle nekobato
@@ -36,8 +35,10 @@ html
               a.action-button(href="mailto:nekobato@gmail.com")
                 i.fa.fa-envelope
                 span email
-            
-      section.container(id="portfolio")
+            div.my-exhibit-panel
+              img(src="./img/nekobato.png")
+                
+      section.container.type-portfolio(id="portfolio")
         
         mixin portfolio(image)
           div.row
