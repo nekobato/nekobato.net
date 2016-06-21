@@ -8,13 +8,12 @@ html {
   margin: 0;
   padding: 0;
   text-align: center;
+  background: #6d6d6d;
 }
 header {
+  background-color: #fbfbfb;
   padding: 24px;
-}
-main {
-  background: #6d6d6d;
-  box-shadow: 0 10px 10px 0 rgba(0,0,0,0.32) inset, 0px 100px 50px 0 rgba(0,0,0,0.16) inset;
+  box-shadow: 0 10px 10px 0 rgba(0,0,0,0.32), 0px 100px 50px 0 rgba(0,0,0,0.16);
 }
 section.type-profile {
   padding: 96px;
