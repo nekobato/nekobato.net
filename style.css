@@ -4,25 +4,34 @@
 body,
 html {
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   margin: 0;
   padding: 0;
   text-align: center;
-  background: #6d6d6d;
+  background: #9d9d9d;
 }
 body {
-  box-shadow: 0 10px 10px 0 rgba(0,0,0,0.32) inset, 0px 100px 50px 0 rgba(0,0,0,0.16) inset;
+  box-shadow: 0 0 32px 0 rgba(0,0,0,0.24) inset, 0 50px 100px 0 rgba(0,0,0,0.16) inset;
 }
 header {
-  color: #ededed;
-  padding: 48px;
+  display: block;
+  position: relative;
+  text-align: left;
+  background: rgba(255,255,255,0.7);
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12), 0px 2px 2px 0 rgba(255,255,255,0.4) inset;
+  background: #000;
+  color: #cdcdcd;
+  padding: 24px;
+  width: 480px;
+  margin: 0 auto;
+  text-align: center;
 }
 section.type-profile {
-  padding: 96px;
+  padding: 96px 0 48px;
 }
 section.type-portfolio {
   position: relative;
-  height: 800px;
+  height: 720px;
 }
 h1 {
   font-size: 36px;
@@ -52,16 +61,16 @@ h1 {
   right: 0;
 }
 .panel.type-portfolio:nth-child(1) {
-  top: 100px;
+  top: 70px;
 }
 .panel.type-portfolio:nth-child(2) {
-  top: 250px;
+  top: 190px;
 }
 .panel.type-portfolio:nth-child(3) {
-  top: 400px;
+  top: 310px;
 }
 .panel.type-portfolio:nth-child(4) {
-  top: 550px;
+  top: 430px;
 }
 .panel .panel-title {
   display: block;
@@ -88,7 +97,6 @@ h1 {
   margin: 20px auto;
   width: 100px;
   background-color: #fff;
-  transform: rotate(1deg);
 }
 .panel .panel-image > img {
   display: block;
@@ -141,21 +149,19 @@ h1 {
 }
 .line-decoration {
   position: absolute;
-  border-radius: 5px;
-  border: 4px solid #ababab;
+  border: 1px solid #4d4d4d;
   top: 0;
   left: 0;
   right: 0;
   height: 100%;
   margin: auto;
-  width: 12px;
+  width: 1px;
 }
 .line-decoration .line-to-panel {
   position: absolute;
-  border-radius: 5px;
-  border: 4px solid #ababab;
+  border: 1px solid #4d4d4d;
   width: 80px;
-  height: 12px;
+  height: 1px;
 }
 .line-decoration .line-to-panel:nth-child(2n-1) {
   right: 48px;
@@ -164,20 +170,29 @@ h1 {
   left: 48px;
 }
 .line-decoration .line-to-panel:nth-child(1) {
-  top: 170px;
+  top: 140px;
 }
 .line-decoration .line-to-panel:nth-child(2) {
-  top: 320px;
+  top: 260px;
 }
 .line-decoration .line-to-panel:nth-child(3) {
-  top: 470px;
+  top: 380px;
 }
 .line-decoration .line-to-panel:nth-child(4) {
-  top: 620px;
+  top: 500px;
 }
 footer {
-  padding: 6px;
+  display: block;
+  position: relative;
+  text-align: left;
+  background: rgba(255,255,255,0.7);
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12), 0px 2px 2px 0 rgba(255,255,255,0.4) inset;
+  background: #000;
+  padding: 12px;
+  width: 480px;
+  margin: 0 auto;
+  text-align: center;
 }
 footer .copyright {
-  color: rgba(0,0,0,0.5);
+  color: #cdcdcd;
 }

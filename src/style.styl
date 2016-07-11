@@ -14,32 +14,37 @@ panel-base() {
 
 body, html {
   width: 100%
-  height: 100%
+  min-height: 100%
   margin: 0
   padding: 0
   text-align: center
-  background: #6d6d6d
+  background: #9d9d9d
 }
 
 body {
-  box-shadow: 0 10px 10px 0 rgba(0,0,0,0.32) inset,
-              0px 100px 50px 0 rgba(0,0,0,0.16) inset
+  box-shadow: 0 0 32px 0 rgba(0,0,0,0.24) inset,
+              0 50px 100px 0 rgba(0,0,0,0.16) inset
 }
 
 header {
-  color: #ededed
-  padding: 48px
+  panel-base()
+  background: #000000
+  color: #cdcdcd
+  padding: 24px
+  width: 480px
+  margin: 0 auto
+  text-align: center
 }
 
 section {
 
   &.type-profile {
-    padding: 96px
+    padding: 96px 0 48px
   }
 
   &.type-portfolio {
     position: relative
-    height: 200px * 4
+    height: 180px * 4
   }
 
 }
@@ -77,10 +82,13 @@ h1 {
       right: 0
     }
 
-    &:nth-child(1) { top: 100px }
-    &:nth-child(2) { top: 250px }
-    &:nth-child(3) { top: 400px }
-    &:nth-child(4) { top: 550px }
+    rowSize = 120px
+    marginSize = 50px
+
+    &:nth-child(1) { top: rowSize * 1 - marginSize }
+    &:nth-child(2) { top: rowSize * 2 - marginSize }
+    &:nth-child(3) { top: rowSize * 3 - marginSize }
+    &:nth-child(4) { top: rowSize * 4 - marginSize }
   }
 
   .panel-title {
@@ -102,7 +110,6 @@ h1 {
     margin: 20px auto
     width: 100px
     background-color: #ffffff
-    transform: rotate(1deg)
 
     & > img {
       display: block
@@ -164,8 +171,7 @@ h1 {
 
 line-decoration() {
   position: absolute
-  border-radius: 5px
-  border: 4px solid #ababab
+  border: 1px solid #4d4d4d
 }
 
 .line-decoration {
@@ -175,12 +181,12 @@ line-decoration() {
   right: 0
   height: 100%
   margin: auto
-  width: 12px
+  width: 1px
 
   .line-to-panel {
     line-decoration()
     width: 80px
-    height: 12px
+    height: 1px
 
     &:nth-child(2n-1) {
       right: 48px
@@ -190,17 +196,25 @@ line-decoration() {
       left: 48px
     }
 
-    &:nth-child(1) { top: 150px * 1 + 20px }
-    &:nth-child(2) { top: 150px * 2 + 20px }
-    &:nth-child(3) { top: 150px * 3 + 20px }
-    &:nth-child(4) { top: 150px * 4 + 20px }
+    rowSize = 120px
+    marginSize = 20px
+
+    &:nth-child(1) { top: rowSize * 1 + marginSize }
+    &:nth-child(2) { top: rowSize * 2 + marginSize }
+    &:nth-child(3) { top: rowSize * 3 + marginSize }
+    &:nth-child(4) { top: rowSize * 4 + marginSize }
   }
 }
 
 footer {
-  padding: 6px
+  panel-base()
+  background: #000000
+  padding: 12px
+  width: 480px
+  margin: 0 auto
+  text-align: center
 
   .copyright {
-    color: rgba(0,0,0,0.5)
+    color: #cdcdcd
   }
 }
