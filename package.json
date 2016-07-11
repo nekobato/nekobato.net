@@ -5,12 +5,8 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npm jade:watch & npm stylus:watch",
-    "jade:watch": "jade src/*.jade -w -o .",
-    "jade": "jade src/*.jade -o .",
-    "stylus": "stylus src/*.styl -o .",
-    "stylus:watch": "stylus -w src/*.styl -o .",
-    "build": "webpack -p"
+    "dev": "gulp dev",
+    "build": "gulp build"
   },
   "repository": {
     "type": "git",
@@ -24,10 +20,9 @@
   },
   "homepage": "https://github.com/nekobato/nekobato.net#readme",
   "devDependencies": {
-    "jade": "^1.11.0",
-    "webpack": "^1.12.14",
-    "webpack-dev-server": "^1.12.1",
-    "webpack-notifier": "^1.2.1"
+    "gulp": "^3.9.1",
+    "gulp-pug": "^3.0.3",
+    "gulp-stylus": "^2.5.0"
   },
   "dependencies": {
     "materialize-css": "^0.97.6"

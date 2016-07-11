@@ -19,66 +19,78 @@ html
 
     main
       section.type-profile(id="profile")
-        div.row.type-my-panel
-          div.panel
+        div.panel
+          div.title-group
             span.panel-title 猫鳩
             span.panel-subtitle nekobato
-            div.panel-action
-              a.action-button(href="http://nekobato.hatenablog.com")
-                i.fa.fa-rss
-                span blog
-              a.action-button(href="https://twitter.com/nekobato")
-                i.fa.fa-twitter
-                span twitter
-              a.action-button(href="https://github.com/nekobato")
-                i.fa.fa-github
-                span github
-              a.action-button(href="mailto:nekobato@gmail.com")
-                i.fa.fa-envelope
-                span email
-            div.my-exhibit-panel
-              img(src="./img/nekobato.png")
+          div.panel-image
+            img(src="./img/nekobato.png")
+          div.panel-action
+            a.action-button(href="http://nekobato.hatenablog.com")
+              i.fa.fa-rss
+              span blog
+            a.action-button(href="https://twitter.com/nekobato")
+              i.fa.fa-twitter
+              span twitter
+            a.action-button(href="https://github.com/nekobato")
+              i.fa.fa-github
+              span github
+            a.action-button(href="mailto:nekobato@gmail.com")
+              i.fa.fa-envelope
+              span email
                 
       section.container.type-portfolio(id="portfolio")
-        
-        mixin portfolio(image)
-          div.row
-            div.exhibit-panel
-              img(src=image)
-            block
 
-        +portfolio('./img/polidium.png')
-          div.panel
+        div.panel.type-portfolio
+          div.title-group
             span.panel-title Polidium
             span.panel-subtitle 半透明動画プレイヤー
-            div.panel-action
-              a.action-button(href="https://github.com/nekobato/Polidium")
-                i.fa.fa-github
-                span github
-        +portfolio('./img/davneko.png')
-          div.panel
+          div.panel-image
+            img(src="./img/polidium.png")
+          div.panel-action
+            a.action-button(href="https://github.com/nekobato/Polidium")
+              i.fa.fa-github
+              span github
+              
+        div.panel.type-portfolio
+          div.title-group
             span.panel-title Davneko
             span.panel-subtitle webdav音楽プレイヤー
-            div.panel-action
-              a.action-button(href="https://github.com/nekobato/Davneko")
-                i.fa.fa-github
-                span github
-        +portfolio('./img/endnanonna.gif')
-          div.panel
+          div.panel-image
+            img(src="./img/davneko.png")
+          div.panel-action
+            a.action-button(href="https://github.com/nekobato/Davneko")
+              i.fa.fa-github
+              span github
+              
+        div.panel.type-portfolio
+          div.title-group
             span.panel-title Endnanonna
             span.panel-subtitle GIFタイトルジェネレーター
-            div.panel-action
-              a.action-button(href="http://endnanonna.nekobato.net/")
-                i.fa.fa-link
-                span website
-        +portfolio('./img/gyazzac.png')
-          div.panel
+          div.panel-image
+            img(src="./img/endnanonna.gif")
+          div.panel-action
+            a.action-button(href="http://endnanonna.nekobato.net/")
+              i.fa.fa-link
+              span website
+
+        div.panel.type-portfolio
+          div.title-group
             span.panel-title GyazzA(C)
             span.panel-subtitle Gyazzからスライドを生成する
-            div.panel-action
-              a.action-button(href="https://github.com/nekobato/GyazzAC")
-                i.fa.fa-github
-                span github
+          div.panel-image
+            img(src="./img/gyazzac.png")
+          div.panel-action
+            a.action-button(href="https://github.com/nekobato/GyazzAC")
+              i.fa.fa-github
+              span github
+              
+              
+        div.line-decoration
+          div.line-to-panel
+          div.line-to-panel
+          div.line-to-panel
+          div.line-to-panel
 
     footer
       p.copyright © 2009-2016 nekobato.net, All rights reserved.

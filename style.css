@@ -4,73 +4,42 @@
 body,
 html {
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   margin: 0;
   padding: 0;
   text-align: center;
+  background: #9d9d9d;
+}
+body {
+  box-shadow: 0 0 32px 0 rgba(0,0,0,0.24) inset, 0 50px 100px 0 rgba(0,0,0,0.16) inset;
 }
 header {
+  display: block;
+  position: relative;
+  text-align: left;
+  background: rgba(255,255,255,0.7);
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12), 0px 2px 2px 0 rgba(255,255,255,0.4) inset;
+  background: #000;
+  color: #cdcdcd;
   padding: 24px;
-}
-main {
-  background: #6d6d6d;
-  box-shadow: 0 10px 10px 0 rgba(0,0,0,0.32) inset, 0px 100px 50px 0 rgba(0,0,0,0.16) inset;
+  width: 480px;
+  margin: 0 auto;
+  text-align: center;
 }
 section.type-profile {
-  padding: 96px;
+  padding: 96px 0 48px;
+}
+section.type-portfolio {
+  position: relative;
+  height: 720px;
 }
 h1 {
   font-size: 36px;
   font-weight: 300;
   margin: 0;
 }
-.row {
-  display: flex;
-  width: 100%;
-}
-.exhibit-panel {
-  display: block;
-  position: relative;
-  text-align: left;
-  background: rgba(255,255,255,0.7);
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12), 0px 2px 2px 0 rgba(255,255,255,0.4) inset;
-  margin: 20px auto;
-  width: 200px;
-  background-color: #fff;
-}
-.exhibit-panel > img {
-  display: block;
-  border-radius: 2px 2px 0 0;
-  position: relative;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-}
-.my-exhibit-panel {
-  display: block;
-  position: relative;
-  text-align: left;
-  background: rgba(255,255,255,0.7);
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12), 0px 2px 2px 0 rgba(255,255,255,0.4) inset;
-  position: absolute;
-  top: -50px;
-  right: 24px;
-  margin: 20px auto;
-  width: 100px;
-  background-color: #fff;
-  transform: rotate(1deg);
-}
-.my-exhibit-panel > img {
-  display: block;
-  border-radius: 2px 2px 0 0;
-  position: relative;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 100%;
+.container {
+  width: 1000px;
 }
 .panel {
   display: block;
@@ -81,6 +50,27 @@ h1 {
   margin: auto;
   padding: 24px;
   width: 320px;
+}
+.panel.type-portfolio {
+  position: absolute;
+}
+.panel.type-portfolio:nth-child(2n-1) {
+  left: 0;
+}
+.panel.type-portfolio:nth-child(2n) {
+  right: 0;
+}
+.panel.type-portfolio:nth-child(1) {
+  top: 70px;
+}
+.panel.type-portfolio:nth-child(2) {
+  top: 190px;
+}
+.panel.type-portfolio:nth-child(3) {
+  top: 310px;
+}
+.panel.type-portfolio:nth-child(4) {
+  top: 430px;
 }
 .panel .panel-title {
   display: block;
@@ -94,6 +84,29 @@ h1 {
   line-height: 1;
   font-weight: 300;
   font-size: 18px;
+}
+.panel .panel-image {
+  display: block;
+  position: relative;
+  text-align: left;
+  background: rgba(255,255,255,0.7);
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12), 0px 2px 2px 0 rgba(255,255,255,0.4) inset;
+  position: absolute;
+  bottom: 90px;
+  right: 24px;
+  margin: 20px auto;
+  width: 100px;
+  background-color: #fff;
+}
+.panel .panel-image > img {
+  display: block;
+  border-radius: 2px 2px 0 0;
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
 }
 .panel .panel-content {
   padding: 24px 0 0;
@@ -113,7 +126,6 @@ h1 {
   width: 80px;
   background-color: transparent;
   color: #343434;
-  cursor: pointer;
   border: none;
   border-radius: 2px;
   display: inline-block;
@@ -135,6 +147,52 @@ h1 {
   font-size: 18px;
   text-align: center;
 }
-.copyright {
-  color: rgba(0,0,0,0.5);
+.line-decoration {
+  position: absolute;
+  border: 1px solid #4d4d4d;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  margin: auto;
+  width: 1px;
+}
+.line-decoration .line-to-panel {
+  position: absolute;
+  border: 1px solid #4d4d4d;
+  width: 80px;
+  height: 1px;
+}
+.line-decoration .line-to-panel:nth-child(2n-1) {
+  right: 48px;
+}
+.line-decoration .line-to-panel:nth-child(2n) {
+  left: 48px;
+}
+.line-decoration .line-to-panel:nth-child(1) {
+  top: 140px;
+}
+.line-decoration .line-to-panel:nth-child(2) {
+  top: 260px;
+}
+.line-decoration .line-to-panel:nth-child(3) {
+  top: 380px;
+}
+.line-decoration .line-to-panel:nth-child(4) {
+  top: 500px;
+}
+footer {
+  display: block;
+  position: relative;
+  text-align: left;
+  background: rgba(255,255,255,0.7);
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12), 0px 2px 2px 0 rgba(255,255,255,0.4) inset;
+  background: #000;
+  padding: 12px;
+  width: 480px;
+  margin: 0 auto;
+  text-align: center;
+}
+footer .copyright {
+  color: #cdcdcd;
 }
