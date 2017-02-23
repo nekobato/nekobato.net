@@ -1,6 +1,6 @@
 const gulp = require('gulp')
 const pug = require('gulp-pug')
-const stylus = require('gulp-stylus')
+const less = require('gulp-less')
 
 gulp.task('pug', () => {
   gulp.src('./src/*.jade')
@@ -8,13 +8,13 @@ gulp.task('pug', () => {
     .pipe(gulp.dest('./'))
 })
 
-gulp.task('stylus', () => {
-  gulp.src('./src/*.styl')
-    .pipe(stylus())
+gulp.task('less', () => {
+  gulp.src('./src/*.less')
+    .pipe(less())
     .pipe(gulp.dest('./'))
 })
 
 
-gulp.task('dev', ['pug', 'stylus'], () => {
-  gulp.watch('src/**/*', ['pug', 'stylus'])
+gulp.task('dev', ['pug', 'less'], () => {
+  gulp.watch('src/**/*', ['pug', 'less'])
 })
