@@ -18,3 +18,5 @@ gulp.task('less', () => {
 gulp.task('dev', ['pug', 'less'], () => {
   gulp.watch('src/**/*', ['pug', 'less'])
 })
+
+gulp.task('build', ['pug', 'less'])
