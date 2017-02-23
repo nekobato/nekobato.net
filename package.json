@@ -21,8 +21,8 @@
   "homepage": "https://github.com/nekobato/nekobato.net#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-pug": "^3.0.3",
-    "gulp-stylus": "^2.5.0"
+    "gulp-less": "^3.3.0",
+    "gulp-pug": "^3.0.3"
   },
   "dependencies": {
     "materialize-css": "^0.97.6"
