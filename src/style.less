@@ -27,7 +27,7 @@ html {
 body {
   display: flex;
   flex-direction: row;
-  // box-shadow: 0 0 32px 0 rgba(0,0,0,0.24) inset, 0 50px 100px 0 rgba(0,0,0,0.16) inset;
+  transition: all .3s;
 }
 
 .page-left,
@@ -180,4 +180,33 @@ body {
 footer {
   padding: 40px 0 0;
   width: 100%;
+}
+
+@media(max-width: 800px) {
+
+  body {
+    flex-direction: column;
+  }
+
+  .page-left {
+    position: relative;
+    width: 100%;
+    height: 50%;
+
+    .left-inner {
+      padding: 20px 0 10px;
+
+      .image-container {
+        display: none;
+      }
+    }
+  }
+
+  .page-right {
+    position: relative;
+    left: 0;
+    padding: 0 0 0 10px;
+    width: 100%;
+    height: auto;
+  }
 }
