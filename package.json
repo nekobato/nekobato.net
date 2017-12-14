@@ -1,12 +1,14 @@
 {
   "name": "nekobato.net",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "nekobato.net",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "gulp dev",
-    "build": "gulp build"
+    "dev": "pug ./src/index.pug --out . --watch",
+    "build": "npm run pug && npm run less",
+    "pug": "pug ./src/index.pug --out .",
+    "less": "lessc -x ./src/style.less ./style.css"
   },
   "repository": {
     "type": "git",
@@ -19,12 +21,10 @@
     "url": "https://github.com/nekobato/nekobato.net/issues"
   },
   "homepage": "https://github.com/nekobato/nekobato.net#readme",
-  "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-less": "^3.3.0",
-    "gulp-pug": "^3.0.3"
-  },
   "dependencies": {
-    "materialize-css": "^0.97.6"
+    "less": "^2.7.3",
+    "materialize-css": "^0.100.2",
+    "pug": "^2.0.0-rc.4",
+    "pug-cli": "^1.0.0-alpha6"
   }
 }
