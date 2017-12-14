@@ -8,7 +8,12 @@ html
     link(href="https://fonts.googleapis.com/css?family=Titillium+Web:200,300,400,700,900", rel="stylesheet")
     link(href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css", rel="stylesheet")
     link(href="style.css?update=2017-02-24", rel="stylesheet")
-      
+    script(src="https://www.googletagmanager.com/gtag/js?id=UA-55009135-1" async)
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-55009135-1');
   body
     
     header.page-left
@@ -90,6 +95,3 @@ html
               
         footer
           p.copyright © 2009-2017 nekobato.net, All rights reserved.
-                    
-  script(src="https://www.googletagmanager.com/gtag/js?id=UA-55009135-1" async)
-  script(src="analytics.js" async)
