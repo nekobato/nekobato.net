@@ -1,0 +1,24 @@
+mixin li-link(href, icon, name)
+  li
+    a.link-button(href=href, rel="nofollow noopener", target="_blank")
+      i.fa(class=icon)
+      span= name
+
+body
+  header
+    h1 猫鳩柔工業
+    figure
+      img(src="./img/nekobato.png")
+      span.handle 猫鳩
+      span.name Hayato Koriyama
+    ul.link-list
+      +li-link("//nekobato.hatenablog.com", "fa-rss", "blog")
+      +li-link("//twitter.com/nekobato", "fa-twitter", "twitter")
+      +li-link("//github.com/nekobato", "fa-github", "github")
+      +li-link("mailto:nekobato@gmail.com", "fa-envelope", "email")
+  main
+    include portfolio.pug
+    include resume.pug
+    include contact.pug
+  footer
+    p.copyright © 2009-2018 nekobato.net, All rights reserved.

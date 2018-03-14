@@ -1,0 +1,37 @@
+mixin portfolio-link(href, imgSrc)
+  figure
+    a(href=href, rel="nofollow noopener", target="_blank")
+      img(src=imgSrc)
+
+article.portfolio
+  h1 portfolio
+  section
+    +portfolio-link("//github.com/nekobato/BookCafe", "./img/bookcafe.png")
+    span.title BookCafe
+    span.name webdavブックリーダー
+    p.platform Web
+  section
+    +portfolio-link("//github.com/nekobato/ScrapLinker", "./img/scraplinker.png")
+    span.title ScrapLinker
+    span.name ページからScrapboxのリンク記法を生成する
+    p.platform Chrome extension
+  section
+    +portfolio-link("//github.com/nekobato/Polidium", "./img/polidium.png")
+    span.title Polidium
+    span.name 半透明動画プレイヤー
+    p.platform Desktop Application (Mac)
+  section
+    +portfolio-link("//github.com/nekobato/davneko", "./img/davneko.png")
+    span.title Davneko
+    span.name webdav音楽プレイヤー
+    p.platform Web, Desktop Application (Mac)
+  section
+    +portfolio-link("//endonanonna.nekobato.net", "./img/endnanonna.png")
+    span.title Endnanonna
+    span.name GIFタイトルジェネレーター
+    p.platform Web
+  section
+    +portfolio-link("//github.com/nekobato/GyazzAC", "./img/gyazzac.png")
+    span.title GyazzA(C)
+    span.name Gyazzページをプレゼンテーションスライドにする
+    p.platform bookmarklet
