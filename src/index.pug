@@ -1,4 +1,9 @@
 doctype html
 html
-  include head.pug
-  include body.pug
+  include pug/head.pug
+  body
+    include pug/header.pug
+    main
+      include pug/portfolio.pug
+      include pug/resume.pug
+    include pug/footer.pug

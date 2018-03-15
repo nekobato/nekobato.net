@@ -1,0 +1,85 @@
+body,
+html {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-size: 14px;
+  font-style: normal;
+  font-family: 'Titillium Web', sans-serif;
+  text-align: center;
+  background: #fff;
+}
+body {
+  transition: all .3s;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  width: 50%;
+  height: 100%;
+  background: #a6cee2;
+}
+header h1 {
+  font-size: 48px;
+  font-weight: 900;
+}
+header figure {
+  position: absolute;
+  top: 0;
+  left: -100px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 2px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.16);
+  overflow: hidden;
+  border: 2px solid #e7e2ec;
+  -webkit-tap-highlight-color: transparent;
+}
+main,
+footer {
+  position: relative;
+  left: 50%;
+  width: 50%;
+}
+main article h1 {
+  position: relative;
+  left: -24px;
+  text-align: left;
+}
+main article h1 .text {
+  display: inline-block;
+  padding: 8px 8px;
+  background: #000;
+  line-height: 1;
+  font-size: 32px;
+  color: #fff;
+  text-transform: uppercase;
+}
+main .portfolio section {
+  padding: 24px 32px;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+footer .copyright {
+  margin: 0 32px 16px 0;
+  text-align: right;
+  font-size: 16px;
+  color: #666;
+}

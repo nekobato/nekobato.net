@@ -1,0 +1,30 @@
+mixin social-link(href, icon, name)
+  a.icon-button(href=href, rel="nofollow noopener", target="_blank")
+    i.fa(class=icon)
+    span= name
+
+body
+  header
+    h1 猫鳩柔工業
+    section.profile
+      figure
+        img(src="./images/nekobato.png")
+        span.handle 猫鳩
+        span.name Hayato Koriyama
+      ul.contact-list
+        li
+          i.fa.fa-envelop
+          span nekobato@gmail.com
+        li
+          i.fa.fa-phone
+          span 090.7301.4492
+        li
+          i.fa.fa-map-marker
+          span Asia/Tokyo
+      ul.social-list
+        li
+          +social-link("//nekobato.hatenablog.com", "fa-rss", "blog")
+        li
+          +social-link("//twitter.com/nekobato", "fa-twitter", "twitter")
+        li
+          +social-link("//github.com/nekobato", "fa-github", "github")
