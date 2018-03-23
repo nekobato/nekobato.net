@@ -35,26 +35,91 @@ header {
   height: 100%;
   background: #a6cee2;
 
+  @header-content-width: 320px;
+
   h1 {
+    margin: 0;
+    width: @header-content-width;
+    text-align: left;
     font-size: 48px;
     font-weight: 900;
   }
 
-  figure {
-    position: absolute;
-    top: 0;
-    left: -100px;
-    display: flex;
-    justify-content: center;
-    width: 80px;
-    height: 80px;
-    border-radius: 2px;
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 8px rgba(0,0,0,0.16);
-    overflow: hidden;
-    border: 2px solid #e7e2ec;
-    -webkit-tap-highlight-color: transparent;
+  .profile {
+    position: relative;
+    left: 48px;
+    margin: 16px 0 0;
+    width: @header-content-width - 96px;
+    text-align: left;
+
+    figure {
+      position: absolute;
+      top: 0;
+      left: -96px;
+      margin: 0;
+      width: 80px;
+      height: 80px;
+      background: #fff;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.16);
+      border-radius: 8px;
+      -webkit-tap-highlight-color: transparent;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .name {
+      display: flex;
+      flex-flow: column;
+      height: 80px;
+      text-align: left;
+
+      .handle {
+        font-size: 32px;
+      }
+
+      .real-name {
+        font-size: 16px;
+      }
+    }
+
+    .contact-list {
+      li {
+        margin: 0 0 4px 0;
+        .fa {
+          width: 16px;
+          margin: 0 4px 0 0;
+          text-align: center;
+        }
+      }
+    }
+
+    .social-list {
+      display: flex;
+      flex-flow: row;
+      justify-content: start;
+      li {
+        width: 64px;
+        a {
+          display: flex;
+          flex-flow: column;
+          align-items: center;
+          color: #000;
+
+          .fa {
+            font-size: 24px;
+            margin: 0 0 2px 0;
+          }
+
+          .label {
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
   }
 }
 

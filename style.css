@@ -31,26 +31,84 @@ header {
   background: #a6cee2;
 }
 header h1 {
+  margin: 0;
+  width: 320px;
+  text-align: left;
   font-size: 48px;
   font-weight: 900;
 }
-header figure {
+header .profile {
+  position: relative;
+  left: 48px;
+  margin: 16px 0 0;
+  width: 224px;
+  text-align: left;
+}
+header .profile figure {
   position: absolute;
   top: 0;
-  left: -100px;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: center;
-      justify-content: center;
+  left: -96px;
+  margin: 0;
   width: 80px;
   height: 80px;
-  border-radius: 2px;
   background: #fff;
-  border-radius: 5px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.16);
-  overflow: hidden;
-  border: 2px solid #e7e2ec;
+  border-radius: 8px;
   -webkit-tap-highlight-color: transparent;
+}
+header .profile figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+header .profile .name {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: column;
+      flex-flow: column;
+  height: 80px;
+  text-align: left;
+}
+header .profile .name .handle {
+  font-size: 32px;
+}
+header .profile .name .real-name {
+  font-size: 16px;
+}
+header .profile .contact-list li {
+  margin: 0 0 4px 0;
+}
+header .profile .contact-list li .fa {
+  width: 16px;
+  margin: 0 4px 0 0;
+  text-align: center;
+}
+header .profile .social-list {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row;
+      flex-flow: row;
+  -ms-flex-pack: start;
+      justify-content: start;
+}
+header .profile .social-list li {
+  width: 64px;
+}
+header .profile .social-list li a {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: column;
+      flex-flow: column;
+  -ms-flex-align: center;
+      align-items: center;
+  color: #000;
+}
+header .profile .social-list li a .fa {
+  font-size: 24px;
+  margin: 0 0 2px 0;
+}
+header .profile .social-list li a .label {
+  text-transform: uppercase;
 }
 main,
 footer {
@@ -67,6 +125,7 @@ main article h1 .text {
   display: inline-block;
   padding: 8px 8px;
   background: #000;
+  background-blend-mode: screen;
   line-height: 1;
   font-size: 32px;
   color: #fff;
