@@ -1,31 +1,28 @@
 const gulp = require('gulp')
 const pug = require('gulp-pug')
-const less = require('gulp-less')
-const LessAutoprefix = require('less-plugin-autoprefix')
+const sass = require('gulp-sass')
+const autoprefixer = require('gulp-autoprefixer')
 
 gulp.task('pug', () => {
+  let now = Date.now()
   gulp.src('./index.pug')
-    .pipe(pug({
-      data: {
-        updatedAt: Date.now()
-      }
-    }))
+    .pipe(pug())
     .pipe(gulp.dest('../'))
 })
 
-gulp.task('less', () => {
-  gulp.src('./style.less')
-    .pipe(less({
-      plugins: [
-        new LessAutoprefix({ browsers: ['last 2 versions'] })
-      ]
+gulp.task('sass', () => {
+  gulp.src('./style.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+			cascade: false
     }))
     .pipe(gulp.dest('../'))
 })
 
 gulp.task('watch', ['build'], () => {
   gulp.watch('./**/*.pug', ['pug'])
-  gulp.watch('./**/*.less', ['less'])
+  gulp.watch('./**/*.scss', ['sass'])
 })
 
-gulp.task('build', ['pug', 'less'])
+gulp.task('build', ['pug', 'sass'])

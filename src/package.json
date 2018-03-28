@@ -17,9 +17,7 @@
   "homepage": "https://github.com/nekobato/nekobato.net#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-less": "^4.0.0",
     "gulp-pug": "^3.3.0",
-    "less": "^3.0.1",
-    "less-plugin-autoprefix": "^1.5.1"
+    "gulp-sass": "^3.2.1"
   }
 }
