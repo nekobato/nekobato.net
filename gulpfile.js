@@ -5,19 +5,19 @@ const autoprefixer = require('gulp-autoprefixer')
 
 gulp.task('pug', () => {
   let now = Date.now()
-  gulp.src('./index.pug')
+  gulp.src('./src/index.pug')
     .pipe(pug())
-    .pipe(gulp.dest('../'))
+    .pipe(gulp.dest('./public'))
 })
 
 gulp.task('sass', () => {
-  gulp.src('./style.scss')
+  gulp.src('./src/style.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer({
       browsers: ['last 2 versions'],
 			cascade: false
     }))
-    .pipe(gulp.dest('../'))
+    .pipe(gulp.dest('./public'))
 })
 
 gulp.task('watch', ['build'], () => {
