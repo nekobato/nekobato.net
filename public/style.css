@@ -149,7 +149,8 @@ footer .copyright {
 .portfolio {
   text-align: left; }
   .portfolio section {
-    position: relative; }
+    position: relative;
+    line-height: 1; }
     .portfolio section:before {
       content: '';
       position: absolute;
@@ -165,7 +166,11 @@ footer .copyright {
       color: #000; }
     .portfolio section .title {
       display: block;
+      font-size: 24px; }
+    .portfolio section .description {
       font-size: 16px; }
+    .portfolio section .platform {
+      color: rgba(0, 0, 0, 0.48); }
 
 .resume {
   text-align: left; }
