@@ -1,13 +1,46 @@
+// reset css
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .panel-base() {
   display: block;
   position: relative;
   text-align: left;
-  background: rgba(255,255,255,0.7);
+  background: rgba(255, 255, 255, 0.7);
   // box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12), 0 2px 2px 0 rgba(255,255,255,0.4) inset;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 body,
@@ -19,7 +52,7 @@ html {
   line-height: 1;
   font-size: 14px;
   font-style: normal;
-  font-family: 'Titillium Web', sans-serif;
+  font-family: "Titillium Web", sans-serif;
   text-align: center;
   background: #fff;
 }
@@ -27,7 +60,7 @@ html {
 body {
   display: flex;
   flex-direction: row;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .page-left,
@@ -78,7 +111,6 @@ body {
 
 .profile-card,
 .portfolio-card {
-
   position: relative;
   text-align: left;
 
@@ -98,7 +130,7 @@ body {
     border-radius: 2px;
     background: #fff;
     border-radius: 5px;
-    box-shadow: 0 0 8px rgba(0,0,0,0.16);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.16);
     overflow: hidden;
     border: 2px solid #e7e2ec;
   }
@@ -163,7 +195,7 @@ body {
     text-transform: uppercase;
     vertical-align: middle;
     -webkit-tap-highlight-color: transparent;
-    transition: all .3s;
+    transition: all 0.3s;
 
     &:hover {
       color: #5844ff;
@@ -182,8 +214,7 @@ footer {
   width: 100%;
 }
 
-@media(max-width: 800px) {
-
+@media (max-width: 800px) {
   body {
     flex-direction: column;
   }
