@@ -1,97 +1,47 @@
 doctype html
-html
-  head
-    title nekobato.net
-    meta(http-equiv="Content-Type", content="text/html; charset=UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1")
-    meta(name="description", content="nekobato no homepage")
-    link(href="https://fonts.googleapis.com/css?family=Titillium+Web:200,300,400,700,900", rel="stylesheet")
-    link(href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css", rel="stylesheet")
-    link(href="style.css?update=2017-02-24", rel="stylesheet")
-    script(src="https://www.googletagmanager.com/gtag/js?id=UA-55009135-1" async)
-    script.
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-55009135-1');
-  body
-    
-    header.page-left
-      div.left-inner
-        h1.title nekobato.net
-        section#profile.profile
-          div.profile-card
-            div.card-inner
-              div.image-container
-                img.image(src="./img/nekobato.png")
-              div.title-group
-                span.title 猫鳩
-                span.description Hayato Koriyama
-            div.actions
-              a.action-button(href="http://nekobato.hatenablog.com", rel="nofollow noopener", target="_blank")
-                i.fa.fa-rss
-                span blog
-              a.action-button(href="https://twitter.com/nekobato", rel="nofollow noopener", target="_blank")
-                i.fa.fa-twitter
-                span twitter
-              a.action-button(href="https://github.com/nekobato", rel="nofollow noopener", target="_blank")
-                i.fa.fa-github
-                span github
-              a.action-button(href="mailto:nekobato@gmail.com")
-                i.fa.fa-envelope
-                span email
-    main.page-right
-      section#portfolio.portfolio-section
-        div.portfolio-card
-          div.card-inner
-            div.image-container
-              img.image(src="./img/polidium.png")
-            div.title-group
-              span.title Polidium
-              span.description 半透明動画プレイヤー
-          div.actions.type-portfolio
-            a.action-button(href="https://github.com/nekobato/Polidium", rel="nofollow noopener", target="_blank")
-              i.fa.fa-github
-              span github
-            a.action-button(href="https://github.com/nekobato/Polidium/releases", rel="nofollow noopener", target="_blank")
-              i.fa.fa-download
-              span APP
-              
-        div.portfolio-card
-          div.card-inner
-            div.image-container
-              img.image(src="./img/davneko.png")
-            div.title-group
-              span.title Davneko
-              span.description webdav音楽プレイヤー
-          div.actions.type-portfolio
-            a.action-button(href="https://github.com/nekobato/Davneko", rel="nofollow noopener", target="_blank")
-              i.fa.fa-github
-              span github
-              
-        div.portfolio-card
-          div.card-inner
-            div.image-container
-              img.image(src="./img/endnanonna.gif")
-            div.title-group
-              span.title Endnanonna
-              span.description GIFタイトルジェネレーター
-          div.actions.type-portfolio
-            a.action-button(href="http://endnanonna.nekobato.net/", rel="nofollow noopener", target="_blank")
-              i.fa.fa-link
-              span website
-
-        div.portfolio-card
-          div.card-inner
-            div.image-container
-              img.image(src="./img/gyazzac.png")
-            div.title-group
-              span.title GyazzA(C)
-              span.description Gyazzからスライドを生成する
-          div.actions.type-portfolio
-            a.action-button(href="https://github.com/nekobato/GyazzAC", rel="nofollow noopener", target="_blank")
-              i.fa.fa-github
-              span github
-              
-        footer
-          p.copyright © 2009-2017 nekobato.net, All rights reserved.
+head
+  meta(charset='utf-8')
+  meta(http-equiv='X-UA-Compatible', content='IE=edge')
+  title nekobato.net
+  meta(name='viewport', content='width=device-width, initial-scale=1')
+  link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.5.0/css/all.css', integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU', crossorigin='anonymous')
+  link(rel='stylesheet', type='text/css', media='screen', href='style.css')
+  script(src='https://cdn.jsdelivr.net/npm/vue', defer)
+  script(type='module', src='script.js', defer)
+header
+  h1 nekobato.net
+  section.profile
+    figure
+      img(src='./images/nekobato.png')
+    span.handle= profile.handle
+    span.realname= profile.realname
+    span.timezone= profile.timezone
+    ul.link-list
+      each link in profile.links
+        li
+          a(href=link.url)
+            span(class=`fas fa-${link.icon}`)
+main
+  section.apps
+    h1 Applications / Interfaces
+    each app in apps
+      div.app-detail
+        a(href=app.url)
+          span.name= app.name
+          span.description= app.text
+  section.education
+    h1 Education
+    ul.education-list
+      each edu in education
+        li
+          span.from-to #{edu.from} - #{edu.to}
+          span.name= edu.name
+  section.experience
+    h1 Experience
+    ul.experience-list
+      each ex in experience
+        li
+          span.from-to #{ex.from} - #{ex.to}
+          span.name= ex.name
+footer
+  small 2009 - 2018 (C) nekobato.net

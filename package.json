@@ -5,14 +5,16 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "pug ./src/index.pug --out . --watch",
-    "build": "npm run pug && npm run less",
-    "pug": "pug ./src/index.pug --out .",
+    "build": "npm run pug & npm run less",
+    "dev": "npm run watch & npm run serve",
+    "watch": "chokidar src/**/* -c 'npm run build'",
+    "serve": "serve .",
+    "pug": "pug ./src/index.pug -O ./src/sitedata.js --out .",
     "less": "lessc -x ./src/style.less ./style.css"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nekobato/nekobato.git"
+    "url": "git+https://github.com/nekobato/nekobato.net.git"
   },
   "keywords": [],
   "author": "nekobato",
@@ -23,7 +25,9 @@
   "homepage": "https://github.com/nekobato/nekobato.net#readme",
   "dependencies": {},
   "devDependencies": {
-    "ejs": "^2.6.1",
-    "less": "^3.8.1"
+    "chokidar-cli": "^1.2.1",
+    "less": "^3.8.1",
+    "pug-cli": "^1.0.0-alpha6",
+    "serve": "github:tj/serve"
   }
 }
