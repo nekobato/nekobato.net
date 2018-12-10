@@ -1,26 +1,26 @@
 module.exports = {
   profile: {
-    handle: 'nekobato',
+    handle: '猫鳩',
     realname: 'Hayato Koriyama',
     links: [
       {
         title: 'Github',
-        icon: 'github',
+        icon: 'fab fa-github',
         url: 'https://github.com/nekobato'
       },
       {
         title: 'Twitter',
-        icon: 'twitter',
+        icon: 'fab fa-twitter',
         url: 'https://twitter.com/nekobato'
       },
       {
         title: 'Email',
-        icon: 'envelope',
+        icon: 'fas fa-envelope',
         url: 'mailto:nekobato@gmail.com'
       },
       {
         title: 'Tel',
-        icon: 'phone',
+        icon: 'fas fa-phone',
         url: 'tel:09073014492'
       }
     ]
