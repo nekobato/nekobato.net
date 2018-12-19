@@ -29,38 +29,6 @@ header {
     font-weight: 900;
   }
 
-  .profile {
-    position: relative;
-
-    .handle,
-    .realname {
-      display: block;
-    }
-
-    .handle {
-      font-size: 32px;
-      font-weight: lighter;
-    }
-
-    .realname {
-      margin-top: 2px;
-    }
-  }
-
-  .link-list {
-    display: flex;
-    justify-content: space-between;
-    width: 160px;
-    margin-top: 40px;
-    > li {
-      font-size: 24px;
-
-      a {
-        color: #343434;
-      }
-    }
-  }
-
   figure {
     position: absolute;
     top: 0;
@@ -89,6 +57,70 @@ footer {
   padding: 40px 0 0 60px;
   width: 50%;
   text-align: left;
+}
+
+main {
+  section {
+    h1 {
+      position: relative;
+      display: inline-block;
+      padding: 8px 16px;
+      background: #000;
+      color: #ededed;
+      font-size: 24px;
+      left: -80px;
+    }
+
+    .section-content {
+      margin: 40px 0 0 0;
+    }
+  }
+}
+
+section.profile {
+  position: relative;
+
+  .handle,
+  .realname {
+    display: block;
+  }
+
+  .handle {
+    font-size: 32px;
+    font-weight: lighter;
+  }
+
+  .realname {
+    margin-top: 2px;
+  }
+
+  .link-list {
+    display: flex;
+    justify-content: space-between;
+    width: 160px;
+    margin-top: 40px;
+    > li {
+      font-size: 24px;
+
+      a {
+        color: #343434;
+      }
+
+      span {
+        text-shadow: 1px 0 1px #fff;
+      }
+    }
+  }
+}
+
+section.apps {
+  a {
+    text-decoration: none;
+  }
+
+  .app-detail:not(:last-child) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  }
 }
 
 .profile-card,
