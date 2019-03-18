@@ -31,6 +31,6 @@
     "ejs": "^2.6.1",
     "firebase-tools": "^6.5.0",
     "less": "^3.8.1",
-    "serve": "github:tj/serve"
+    "serve": "^10.1.2"
   }
 }
