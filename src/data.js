@@ -60,27 +60,27 @@ module.exports = {
   resume: {},
   apps: [{
       name: 'Polidium',
-      text: '作業と動画視聴を両立するためのメディアプレイヤー',
+      text: 'Polid Screen Video / Web Player',
       url: 'http://github.com/nekobato/Polidium'
     },
     {
       name: 'Davneko',
-      text: 'Web音楽プレイヤー',
+      text: 'WebDAV Audio Player',
       url: 'http://github.com/nekobato/Davneko'
     },
     {
       name: 'BookCafe',
-      text: 'Webブックリーダー',
+      text: 'WebDAV Book Viewer',
       url: 'http://github.com/nekobato/BookCafe'
     },
     {
       name: 'ScrapLinker',
-      text: '開いているタブのリンクをScrapbox記法で生成するChrome extension',
+      text: 'Chrome extension to generate Scrapbox links',
       url: 'http://github.com/nekobato/ScrapLinker'
     },
     {
       name: 'Endnanonna',
-      text: 'GIFジェネレーター',
+      text: 'のんのんびより ED GIF Generator',
       url: 'http://github.com/nekobato/endnanonna'
     }
   ],
