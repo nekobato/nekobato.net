@@ -2,8 +2,8 @@ module.exports = {
   profile: {
     handle: '猫鳩',
     realname: 'Hayato Koriyama',
-    links: [
-      {
+    timezone: 'Asia/Tokyo',
+    links: [{
         title: 'Github',
         icon: 'fab fa-github',
         url: 'https://github.com/nekobato'
@@ -25,8 +25,7 @@ module.exports = {
       }
     ]
   },
-  education: [
-    {
+  education: [{
       name: '慶応義塾大学 環境情報学部',
       from: '2009/04',
       to: '2013/03'
@@ -37,8 +36,7 @@ module.exports = {
       to: '2015/03'
     }
   ],
-  experience: [
-    {
+  experience: [{
       name: '株式会社 U-NOTE - 業務委託エンジニア',
       from: '2012/04',
       to: '2015/03'
@@ -60,8 +58,7 @@ module.exports = {
     }
   ],
   resume: {},
-  apps: [
-    {
+  apps: [{
       name: 'Polidium',
       text: '作業と動画視聴を両立するためのメディアプレイヤー',
       url: 'http://github.com/nekobato/Polidium'
@@ -87,10 +84,8 @@ module.exports = {
       url: 'http://github.com/nekobato/endnanonna'
     }
   ],
-  links: [
-    {
-      title: '',
-      url: ''
-    }
-  ]
+  links: [{
+    title: '',
+    url: ''
+  }]
 };

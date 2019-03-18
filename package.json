@@ -5,11 +5,12 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run less",
+    "build": "npm run less & npm run ejs",
     "dev": "npm run watch & npm run serve",
     "watch": "chokidar src/**/* -c 'npm run build'",
     "serve": "serve public",
-    "less": "lessc -x ./src/style.less ./style.css",
+    "ejs": "node ./ejs",
+    "less": "lessc ./src/style.less ./public/style.css",
     "deploy": "firebase deploy",
     "login": "firebase login"
   },
@@ -27,10 +28,9 @@
   "dependencies": {},
   "devDependencies": {
     "chokidar-cli": "^1.2.1",
-    "ejs-cli": "^2.0.1",
+    "ejs": "^2.6.1",
     "firebase-tools": "^6.5.0",
     "less": "^3.8.1",
-    "pug-cli": "^1.0.0-alpha6",
     "serve": "github:tj/serve"
   }
 }
