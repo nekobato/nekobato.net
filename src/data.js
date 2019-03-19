@@ -4,22 +4,22 @@ module.exports = {
     realname: 'Hayato Koriyama',
     timezone: 'Asia/Tokyo',
     links: [{
-        title: 'Github',
+        title: 'Github : @nekobato',
         icon: 'fab fa-github',
         url: 'https://github.com/nekobato'
       },
       {
-        title: 'Twitter',
+        title: 'Twitter : @nekobato',
         icon: 'fab fa-twitter',
         url: 'https://twitter.com/nekobato'
       },
       {
-        title: 'Email',
+        title: 'E-mail : nekobato@gmail.com',
         icon: 'fas fa-envelope',
         url: 'mailto:nekobato@gmail.com'
       },
       {
-        title: 'Tel',
+        title: 'Telephone : 090.7301.4492',
         icon: 'fas fa-phone',
         url: 'tel:09073014492'
       }

@@ -51,12 +51,11 @@ header {
   }
 }
 
-main {}
-
 main {
   position: relative;
   top: 0;
   left: 50%;
+  padding-bottom: 40px;
   text-align: left;
   width: 480px;
   background: #fff;
@@ -74,7 +73,7 @@ main {
     }
 
     .section-content {
-      margin: 40px 0 0 0;
+      margin: 24px 0 0 0;
     }
   }
 }
@@ -82,8 +81,7 @@ main {
 section.profile {
   position: relative;
 
-  .handle,
-  .realname {
+  .handle {
     display: block;
   }
 
@@ -92,25 +90,35 @@ section.profile {
     font-weight: lighter;
   }
 
-  .realname {
-    margin-top: 2px;
-  }
-
   .link-list {
+    position: relative;
     display: flex;
     justify-content: space-between;
-    width: 160px;
-    margin-top: 24px;
+    width: 140px;
+    margin-top: 36px;
 
     >li {
-      font-size: 24px;
+      font-size: 20px;
 
       a {
         color: inherit;
+
+        &:hover+.link-title {
+          display: block;
+        }
       }
 
       span {
         text-shadow: 1px 0 1px rgba(0, 0, 0, 0.24);
+      }
+
+      .link-title {
+        position: absolute;
+        display: none;
+        bottom: -18px;
+        left: 0;
+        width: 320px;
+        font-size: 12px;
       }
     }
   }
@@ -118,6 +126,7 @@ section.profile {
 
 section.apps {
   a {
+    display: block;
     text-decoration: none;
   }
 
@@ -128,24 +137,47 @@ section.apps {
   .app-detail {
     margin: 16px 8px;
     padding: 8px;
-    background: #ddd;
+    height: 160px;
+    background: rgba(0, 0, 0, 0.40);
     border-radius: 4px;
   }
 
-  .app-detail:not(:last-child) {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  .name,
+  .description {
+    display: block;
+    color: #fff;
+  }
+
+  .name {
+    font-size: 24px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+}
+
+section.education {
+  .from-to {
+    display: block;
+    font-size: 14px;
   }
 
   .name {
     display: block;
-    font-size: 24px;
+    margin-bottom: 8px;
   }
 }
 
-.education {
+section.experience {
   .from-to {
     display: block;
     font-size: 14px;
+  }
+
+  .name {
+    display: block;
+    margin-bottom: 4px;
   }
 }
 
@@ -160,7 +192,7 @@ footer {
 
   small {
     font-size: 12px;
-    color: rgba(0, 0, 0, 0.72);
+    color: rgba(255, 255, 255, 0.72);
   }
 }
 

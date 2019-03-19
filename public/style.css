@@ -89,10 +89,8 @@ main {
   position: relative;
   top: 0;
   left: 50%;
-  width: 50%;
+  padding-bottom: 40px;
   text-align: left;
-}
-main {
   width: 480px;
   background: #fff;
 }
@@ -107,38 +105,47 @@ main section h1 {
   left: -80px;
 }
 main section .section-content {
-  margin: 40px 0 0 0;
+  margin: 24px 0 0 0;
 }
 section.profile {
   position: relative;
 }
-section.profile .handle,
-section.profile .realname {
+section.profile .handle {
   display: block;
 }
 section.profile .handle {
   font-size: 24px;
   font-weight: lighter;
 }
-section.profile .realname {
-  margin-top: 2px;
-}
 section.profile .link-list {
+  position: relative;
   display: flex;
   justify-content: space-between;
-  width: 160px;
-  margin-top: 24px;
+  width: 140px;
+  margin-top: 36px;
 }
 section.profile .link-list > li {
-  font-size: 24px;
+  font-size: 20px;
 }
 section.profile .link-list > li a {
   color: inherit;
 }
+section.profile .link-list > li a:hover + .link-title {
+  display: block;
+}
 section.profile .link-list > li span {
   text-shadow: 1px 0 1px rgba(0, 0, 0, 0.24);
 }
+section.profile .link-list > li .link-title {
+  position: absolute;
+  display: none;
+  bottom: -18px;
+  left: 0;
+  width: 320px;
+  font-size: 12px;
+}
 section.apps a {
+  display: block;
   text-decoration: none;
 }
 section.apps span {
@@ -147,19 +154,36 @@ section.apps span {
 section.apps .app-detail {
   margin: 16px 8px;
   padding: 8px;
-  background: #ddd;
+  height: 160px;
+  background: rgba(0, 0, 0, 0.4);
   border-radius: 4px;
 }
-section.apps .app-detail:not(:last-child) {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+section.apps .name,
+section.apps .description {
+  display: block;
+  color: #fff;
 }
 section.apps .name {
-  display: block;
   font-size: 24px;
 }
-.education .from-to {
+section.apps .description {
+  font-size: 14px;
+}
+section.education .from-to {
   display: block;
   font-size: 14px;
+}
+section.education .name {
+  display: block;
+  margin-bottom: 8px;
+}
+section.experience .from-to {
+  display: block;
+  font-size: 14px;
+}
+section.experience .name {
+  display: block;
+  margin-bottom: 4px;
 }
 footer {
   position: fixed;
@@ -172,7 +196,7 @@ footer {
 }
 footer small {
   font-size: 12px;
-  color: rgba(0, 0, 0, 0.72);
+  color: rgba(255, 255, 255, 0.72);
 }
 @media (max-width: 800px) {
   body {

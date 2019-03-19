@@ -10,7 +10,9 @@ const ejsFiles = [
 ejsFiles.forEach((filename) => {
   const html = ejs.render(fs.readFileSync(`${__dirname}/src/${filename}.ejs`, {
     encoding: 'utf-8'
-  }), data);
+  }), data, {
+    rmWhitespace: true
+  });
   fs.writeFileSync(`${__dirname}/public/${filename}.html`, html, {
     encoding: 'utf-8'
   });
