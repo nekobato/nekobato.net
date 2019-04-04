@@ -1,5 +1,31 @@
-@import './reset.less';
+<template>
+  <div id="app">
+    <ResetCSS/>
+    <Header/>
+    <Main/>
+    <Footer/>
+  </div>
+</template>
 
+<script lang="ts">
+import Vue from "vue";
+import ResetCSS from "./components/ResetCSS.vue";
+import Header from "./components/Header.vue";
+import Main from "./components/Main.vue";
+import Footer from "./components/Footer.vue";
+
+export default Vue.extend({
+  name: "app",
+  components: {
+    ResetCSS,
+    Header,
+    Main,
+    Footer
+  }
+});
+</script>
+
+<style lang="scss">
 body {
   transition: all 0.3s;
   // background: #a6cee2;
@@ -43,7 +69,7 @@ header {
     border-radius: 8px;
     -webkit-tap-highlight-color: transparent;
 
-    >img {
+    > img {
       width: 100%;
       height: 100%;
       object-fit: contain;
@@ -97,13 +123,13 @@ section.profile {
     width: 140px;
     margin-top: 36px;
 
-    >li {
+    > li {
       font-size: 20px;
 
       a {
         color: inherit;
 
-        &:hover+.link-title {
+        &:hover + .link-title {
           display: block;
         }
       }
@@ -138,7 +164,7 @@ section.apps {
     margin: 16px 8px;
     padding: 8px;
     height: 160px;
-    background: rgba(0, 0, 0, 0.40);
+    background: rgba(0, 0, 0, 0.4);
     border-radius: 4px;
   }
 
@@ -223,3 +249,4 @@ footer {
     height: auto;
   }
 }
+</style>

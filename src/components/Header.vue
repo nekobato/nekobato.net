@@ -8,8 +8,8 @@
       <span class="handle">{{ profile.handle }}</span>
       <ul class="link-list">
         <li v-for="(link, index) in profile.links" :key="index">
-          <a href="{{ link.url }}">
-            <span class="{{ link.icon }}"></span>
+          <a :href="link.url">
+            <span :class="link.icon"></span>
           </a>
           <span class="link-title">{{ link.title }}</span>
         </li>

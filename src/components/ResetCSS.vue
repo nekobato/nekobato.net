@@ -1,3 +1,6 @@
+<template></template>
+
+<style>
 html {
   box-sizing: border-box;
 }
@@ -42,7 +45,8 @@ html {
   line-height: 1;
   font-size: 16px;
   font-style: normal;
-  font-family: 'Titillium Web', sans-serif;
+  font-family: "Titillium Web", sans-serif;
   text-align: center;
   background: #fff;
 }
+</style>
