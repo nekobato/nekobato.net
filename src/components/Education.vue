@@ -17,17 +17,30 @@ export default {
     return {
       education: [
         {
-          name: '慶応義塾大学 環境情報学部',
-          from: '2009/04',
-          to: '2013/03'
+          name: "慶応義塾大学 環境情報学部",
+          from: "2009/04",
+          to: "2013/03"
         },
         {
-          name: '慶應義塾大学院 政策・メディア学科 CIプログラム 修士課程',
-          from: '2013/04',
-          to: '2015/03'
+          name: "慶應義塾大学院 政策・メディア学科 CIプログラム 修士課程",
+          from: "2013/04",
+          to: "2015/03"
         }
       ]
-    }
+    };
+  }
+};
+</script>
+<style lang="scss" scoped>
+section.education {
+  .from-to {
+    display: block;
+    font-size: 14px;
+  }
+
+  .name {
+    display: block;
+    margin-bottom: 8px;
   }
 }
-</script>
+</style>

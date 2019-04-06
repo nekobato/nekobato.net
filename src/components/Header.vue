@@ -1,9 +1,9 @@
 <template>
   <header>
-    <h1>nekobato</h1>
     <section class="profile">
+      <h1>nekobato</h1>
       <figure>
-        <img src="~/assets/images/nekobato.png">
+        <img src="../assets/images/nekobato.png">
       </figure>
       <span class="handle">{{ profile.handle }}</span>
       <ul class="link-list">
@@ -22,37 +22,37 @@ export default {
   data() {
     return {
       profile: {
-        handle: '猫鳩',
-        realname: 'Hayato Koriyama',
-        timezone: 'Asia/Tokyo',
+        handle: "猫鳩",
+        realname: "Hayato Koriyama",
+        timezone: "Asia/Tokyo",
         links: [
           {
-            title: 'Github : @nekobato',
-            icon: 'fab fa-github',
-            url: 'https://github.com/nekobato'
+            title: "Github : @nekobato",
+            icon: "fab fa-github",
+            url: "https://github.com/nekobato"
           },
           {
-            title: 'Twitter : @nekobato',
-            icon: 'fab fa-twitter',
-            url: 'https://twitter.com/nekobato'
+            title: "Twitter : @nekobato",
+            icon: "fab fa-twitter",
+            url: "https://twitter.com/nekobato"
           },
           {
-            title: 'E-mail : nekobato@gmail.com',
-            icon: 'fas fa-envelope',
-            url: 'mailto:nekobato@gmail.com'
+            title: "E-mail : nekobato@gmail.com",
+            icon: "fas fa-envelope",
+            url: "mailto:nekobato@gmail.com"
           },
           {
-            title: 'Telephone : 090.7301.4492',
-            icon: 'fas fa-phone',
-            url: 'tel:09073014492'
+            title: "Telephone : 090.7301.4492",
+            icon: "fas fa-phone",
+            url: "tel:09073014492"
           }
         ]
       }
-    }
+    };
   }
-}
+};
 </script>
-<style scoped>
+<style lang="scss" scoped>
 header {
   position: fixed;
   top: 0;
@@ -66,14 +66,16 @@ header {
   text-align: left;
   color: #fff;
 
-  h1,
   .profile {
-    margin: 0 0 0 40px;
-    width: 295px;
+    position: relative;
+    left: 48px;
     text-align: left;
   }
 
   h1 {
+    position: absolute;
+    top: -40px;
+    left: 0;
     font-size: 40px;
     font-weight: 900;
   }
@@ -94,6 +96,49 @@ header {
       width: 100%;
       height: 100%;
       object-fit: contain;
+    }
+  }
+}
+
+section.profile {
+  position: relative;
+
+  .handle {
+    display: block;
+    font-size: 24px;
+    font-weight: lighter;
+  }
+
+  .link-list {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 140px;
+    margin-top: 36px;
+
+    > li {
+      font-size: 20px;
+
+      a {
+        color: inherit;
+
+        &:hover + .link-title {
+          display: block;
+        }
+      }
+
+      span {
+        text-shadow: 1px 0 1px rgba(0, 0, 0, 0.24);
+      }
+
+      .link-title {
+        position: absolute;
+        display: none;
+        bottom: -18px;
+        left: 0;
+        width: 320px;
+        font-size: 12px;
+      }
     }
   }
 }

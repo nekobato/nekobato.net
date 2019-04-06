@@ -1,16 +1,27 @@
 <template>
-  <footer>
-    <small>2009 - 2019 (c) nekobato.net</small>
-  </footer>
+  <main>
+    <Apps/>
+    <Education/>
+    <Experience/>
+  </main>
 </template>
 <script>
+import Apps from "./Apps.vue";
+import Education from "./Education.vue";
+import Experience from "./Experience.vue";
+
 export default {
+  components: {
+    Apps,
+    Education,
+    Experience
+  },
   data() {
-    return {}
+    return {};
   }
-}
+};
 </script>
-<style lang="less">
+<style lang="scss">
 main {
   position: relative;
   top: 0;
@@ -29,7 +40,7 @@ main {
       background: #000;
       color: #ededed;
       font-size: 24px;
-      left: -80px;
+      left: -40px;
     }
 
     .section-content {

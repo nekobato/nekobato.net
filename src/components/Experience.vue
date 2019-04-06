@@ -17,27 +17,40 @@ export default {
     return {
       experience: [
         {
-          name: '株式会社 U-NOTE - 業務委託エンジニア',
-          from: '2012/04',
-          to: '2015/03'
+          name: "株式会社 U-NOTE - 業務委託エンジニア",
+          from: "2012/04",
+          to: "2015/03"
         },
         {
-          name: '株式会社 U-NOTE - 業務委託エンジニア',
-          from: '2017/01',
-          to: 'now'
+          name: "株式会社 U-NOTE - 業務委託エンジニア",
+          from: "2017/01",
+          to: "now"
         },
         {
-          name: '株式会社 モバイルファクトリー - フロントエンドエンジニア',
-          from: '2015/04',
-          to: '2018/06'
+          name: "株式会社 モバイルファクトリー - フロントエンドエンジニア",
+          from: "2015/04",
+          to: "2018/06"
         },
         {
-          name: '株式会社 メルカリ - フロントエンドエンジニア',
-          from: '2018/07',
-          to: 'now'
+          name: "株式会社 メルカリ - フロントエンドエンジニア",
+          from: "2018/07",
+          to: "now"
         }
       ]
-    }
+    };
+  }
+};
+</script>
+<style lang="scss" scoped>
+section.experience {
+  .from-to {
+    display: block;
+    font-size: 14px;
+  }
+
+  .name {
+    display: block;
+    margin-bottom: 4px;
   }
 }
-</script>
+</style>
