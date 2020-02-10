@@ -1,0 +1,117 @@
+@font-face {
+  font-family: "PixelMplus12";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(PixelMplus12-Regular.woff2), url(PixelMplus12-Regular.woff2);
+}
+
+a {
+  text-decoration-color: hsla(200, 30%, 70%, 1);
+
+  &:link,
+  &:visited {
+    color: hsla(200, 30%, 50%, 1);
+  }
+
+  &:hover {
+    color: hsla(200, 30%, 70%, 1);
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  margin: auto;
+  padding: 0 16px 32px;
+  width: 320px;
+  height: 480px;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  text-align: left;
+  font-size: 14px;
+  overflow-y: scroll;
+  font-family: PixelMplus12;
+  color: #282828;
+}
+
+header {
+  padding: 0 0 32px;
+  h1 {
+    padding: 8px 0 0 0;
+    text-align: left;
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+
+section {
+  padding: 16px 0;
+}
+
+section.about {
+  figure {
+    margin: 16px 0 0 0;
+  }
+  figure img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+section.portfolio {
+  line-height: 20px;
+}
+
+h2 {
+  margin: 16px 0;
+}
+
+dl {
+  margin: 16px 0 0;
+  text-align: left;
+  dt {
+    margin: 16px 0 0 0;
+  }
+  dd {
+    margin: 4px 0 0 0;
+  }
+}
+
+ul {
+  padding: 0 0 0 24px;
+  list-style-type: square;
+  li {
+    margin: 8px 0 0 0;
+  }
+}
+
+p {
+  line-height: 24px;
+}
+
+footer {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  font-family: PixelMplus12;
+  color: rgba(0, 0, 0, 0.64);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.24);
+}
+
+@media screen and (max-width: 640px) {
+  main {
+    width: 100%;
+    height: 100%;
+  }
+}
