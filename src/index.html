@@ -6,6 +6,7 @@
     <title>nekobato.net</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="preload" as="font" href="PixelMplus12-Regular.woff2" />
     <link rel="stylesheet" type="text/css" href="reset.pcss" />
     <link rel="stylesheet" type="text/css" href="index.pcss" />
     <script type="module" src="index.js" defer></script>
@@ -22,7 +23,7 @@
       <section class="about">
         <h2>猫鳩</h2>
         <figure class="my-image">
-          <img src="images/nekobato.png" />
+          <img src="images/nekobato.png" alt="nekobato avator image" />
         </figure>
         <div class="my-info">
           <dl>
@@ -67,98 +68,122 @@
         <div class="app">
           <ul>
             <li>
-              <a
-                href="http://github.com/nekobato/polidium"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Polidium</a
-              >
+              <div>
+                <a
+                  href="http://github.com/nekobato/polidium"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Polidium</a
+                >
+              </div>
               <img
+                class="badge"
                 alt="GitHub tag (latest by date)"
                 src="https://img.shields.io/github/v/release/nekobato/polidium?label=version"
               />
             </li>
             <li>
-              <a
-                href="http://github.com/nekobato/davneko"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Davneko</a
-              >
+              <div>
+                <a
+                  href="http://github.com/nekobato/davneko"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Davneko</a
+                >
+              </div>
               <img
+                class="badge"
                 alt="GitHub release (latest by date)"
                 src="https://img.shields.io/github/v/release/nekobato/davneko?label=version"
               />
             </li>
             <li>
-              <a
-                href="http://github.com/nekobato/davneko-desktop"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Davneko Desktop</a
-              >
+              <div>
+                <a
+                  href="http://github.com/nekobato/davneko-desktop"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Davneko Desktop</a
+                >
+              </div>
               <img
+                class="badge"
                 alt="GitHub release (latest by date)"
                 src="https://img.shields.io/github/v/release/nekobato/davneko-desktop?label=version"
               />
             </li>
             <li>
-              <a
-                href="http://github.com/nekobato/scraplinker"
-                target="_blank"
-                rel="noopener noreferrer"
-                >ScrapLinker</a
-              >
+              <div>
+                <a
+                  href="http://github.com/nekobato/scraplinker"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >ScrapLinker</a
+                >
+              </div>
               <img
+                class="badge"
                 alt="GitHub release (latest by date)"
                 src="https://img.shields.io/github/v/release/nekobato/scraplinker?label=version"
               />
             </li>
             <li>
-              <a
-                href="http://github.com/nekobato/BookCafe"
-                target="_blank"
-                rel="noopener noreferrer"
-                >BookCafe</a
-              >
+              <div>
+                <a
+                  href="http://github.com/nekobato/BookCafe"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >BookCafe</a
+                >
+              </div>
               <img
+                class="badge"
                 alt="GitHub release (latest by date)"
                 src="https://img.shields.io/github/v/release/nekobato/bookcafe?label=version"
               />
             </li>
             <li>
-              <a
-                href="http://github.com/nekobato/Torepe"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Torepe</a
-              >
+              <div>
+                <a
+                  href="http://github.com/nekobato/Torepe"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Torepe</a
+                >
+              </div>
               <img
+                class="badge"
                 alt="GitHub release (latest by date)"
                 src="https://img.shields.io/github/v/release/nekobato/torepe?label=version"
               />
             </li>
             <li>
-              <a
-                href="http://github.com/nekobato/GyazzAC"
-                target="_blank"
-                rel="noopener noreferrer"
-                >GyazzA(C)</a
-              >
+              <div>
+                <a
+                  href="http://github.com/nekobato/GyazzAC"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >GyazzA(C)</a
+                >
+              </div>
               <img
-                alt="Maintenance"
+                class="badge"
+                alt="not maintenanced"
                 src="https://img.shields.io/maintenance/no/2016"
               />
             </li>
             <li>
-              <a
-                href="https://github.com/nekobato/Endnanonna"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Endnanonna</a
-              >
+              <div>
+                <a
+                  href="https://github.com/nekobato/Endnanonna"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Endnanonna</a
+                >
+              </div>
               <img
-                alt="Maintenance"
+                class="badge"
+                alt="not maintenanced"
                 src="https://img.shields.io/maintenance/no/2019"
               />
             </li>
@@ -255,7 +280,7 @@
           UIアーキテクト・フロントエンドエンジニア　慶應義塾大学環境情報学部卒業、同大学院政策・メディア研究科修了　インターフェースを学ぶ傍ら、ITベンチャーの立ち上げにエンジニアとして参画　大学院卒業後は位置情報ゲームを提供する会社で開発に携わる　2019年に株式会社メルカリ入社　2020年に株式会社メルペイ出向
         </p>
       </section>
-      <section class="resume">
+      <section class="resume-education">
         <h2>学歴</h2>
         <dl>
           <dt>2009-04 - 2013-03</dt>
@@ -263,6 +288,8 @@
           <dt>2013-04 - 2015-03</dt>
           <dd>慶應義塾大学院　政策・メディア学科　CIプログラム　修士課程</dd>
         </dl>
+      </section>
+      <section class="resume-experience">
         <h2>職歴</h2>
         <dl>
           <dt>2012-04 - 2015-03</dt>
