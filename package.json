@@ -2,10 +2,10 @@
   "name": "nekobato.net",
   "version": "2.0.1",
   "description": "nekobato.net",
-  "main": "index.html",
+  "main": "dist/index.html",
   "scripts": {
-    "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html",
+    "dev": "parcel serve src/index.html",
+    "build": "rm -rf dist && parcel build src/index.html",
     "deploy": "firebase deploy",
     "login": "firebase login"
   },
@@ -20,15 +20,22 @@
     "url": "https://github.com/nekobato/nekobato.net/issues"
   },
   "homepage": "https://github.com/nekobato/nekobato.net#readme",
-  "dependencies": {},
   "devDependencies": {
-    "autoprefixer": "^9.8.6",
-    "firebase-tools": "^8.6.0",
-    "parcel-bundler": "^1.12.4",
-    "postcss": "^7.0.32",
+    "@parcel/optimizer-cssnano": "^2.0.0-nightly.611",
+    "@parcel/optimizer-htmlnano": "^2.0.0-nightly.611",
+    "@parcel/packager-css": "^2.0.0-nightly.611",
+    "@parcel/packager-html": "^2.0.0-nightly.611",
+    "@parcel/transformer-css": "^2.0.0-nightly.611",
+    "@parcel/transformer-html": "^2.0.0-nightly.611",
+    "@parcel/transformer-postcss": "^2.0.0-nightly.611",
+    "@parcel/transformer-posthtml": "^2.0.0-nightly.611",
+    "autoprefixer": "^10.2.4",
+    "firebase-tools": "^9.5.0",
+    "parcel": "^2.0.0-beta.1",
+    "postcss": "^8.2.6",
     "postcss-css-variables": "^0.17.0",
-    "postcss-modules": "^3.2.0",
-    "postcss-nested": "^4.2.3",
-    "posthtml-expressions": "^1.4.5"
+    "postcss-modules": "^4.0.0",
+    "postcss-nested": "^5.0.3",
+    "posthtml-expressions": "^1.7.1"
   }
 }
