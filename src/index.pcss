@@ -21,7 +21,7 @@ a {
 
 html,
 body {
-  height: 100%;
+  min-height: 100%;
 }
 
 body {
@@ -29,6 +29,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #a6cee2;
 }
 
 main {
@@ -43,6 +44,12 @@ main {
   overflow-y: scroll;
   font-family: PixelMplus12;
   color: #282828;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+main::-webkit-scrollbar {
+  display: none;
 }
 
 header {
@@ -116,7 +123,7 @@ p {
 }
 
 footer {
-  position: absolute;
+  position: fixed;
   right: 8px;
   bottom: 8px;
   font-family: PixelMplus12;
@@ -129,4 +136,22 @@ footer {
     width: 100%;
     height: 100%;
   }
+}
+
+@media screen and (min-width: 641px) {
+  main {
+    position: fixed;
+    top: calc(50% - 240px);
+    left: calc(50% - 160px);
+  }
+}
+
+.glassmorphism {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 16px;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.32);
 }
