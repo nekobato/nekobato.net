@@ -24,7 +24,7 @@
   "devDependencies": {
     "@parcel/optimizer-cssnano": "^2.4.0",
     "@parcel/optimizer-htmlnano": "^2.4.0",
-    "@parcel/packager-css": "^2.4.0",
+    "@parcel/packager-css": "^2.4.1",
     "@parcel/packager-html": "^2.4.0",
     "@parcel/transformer-css": "^2.4.0",
     "@parcel/transformer-html": "^2.4.0",
