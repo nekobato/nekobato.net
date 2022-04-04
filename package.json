@@ -31,7 +31,7 @@
     "@parcel/transformer-postcss": "^2.4.0",
     "@parcel/transformer-posthtml": "^2.4.0",
     "firebase-tools": "^10.5.0",
-    "parcel": "^2.4.0",
+    "parcel": "^2.4.1",
     "postcss": "^8.4.12",
     "postcss-import": "^14.1.0",
     "postcss-nested": "^5.0.6",
