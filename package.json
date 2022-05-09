@@ -27,7 +27,7 @@
     "@parcel/packager-css": "^2.4.0",
     "@parcel/packager-html": "^2.4.0",
     "@parcel/transformer-css": "^2.4.0",
-    "@parcel/transformer-html": "^2.4.0",
+    "@parcel/transformer-html": "^2.5.0",
     "@parcel/transformer-postcss": "^2.4.0",
     "@parcel/transformer-posthtml": "^2.4.0",
     "firebase-tools": "^10.7.2",
