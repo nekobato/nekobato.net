@@ -29,7 +29,7 @@
     "@parcel/transformer-css": "^2.4.0",
     "@parcel/transformer-html": "^2.6.0",
     "@parcel/transformer-postcss": "^2.4.0",
-    "@parcel/transformer-posthtml": "^2.4.0",
+    "@parcel/transformer-posthtml": "^2.6.0",
     "firebase-tools": "^11.0.1",
     "parcel": "^2.4.1",
     "postcss": "^8.4.14",
