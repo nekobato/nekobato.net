@@ -26,7 +26,7 @@
     "@parcel/optimizer-htmlnano": "^2.6.0",
     "@parcel/packager-css": "^2.4.0",
     "@parcel/packager-html": "^2.6.0",
-    "@parcel/transformer-css": "^2.4.0",
+    "@parcel/transformer-css": "^2.6.1",
     "@parcel/transformer-html": "^2.6.0",
     "@parcel/transformer-postcss": "^2.4.0",
     "@parcel/transformer-posthtml": "^2.6.0",
