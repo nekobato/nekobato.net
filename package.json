@@ -23,7 +23,7 @@
   "homepage": "https://github.com/nekobato/nekobato.net#readme",
   "devDependencies": {
     "@parcel/optimizer-cssnano": "^2.6.2",
-    "@parcel/optimizer-htmlnano": "^2.6.0",
+    "@parcel/optimizer-htmlnano": "^2.6.2",
     "@parcel/packager-css": "^2.6.2",
     "@parcel/packager-html": "^2.6.2",
     "@parcel/transformer-css": "^2.6.2",
