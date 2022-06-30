@@ -7,13 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta property="og:image" content="images/nekobato.png" />
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="style.pcss" />
-    <script type="module" src="index.js" defer></script>
+    <script type="module" src="/src/index.ts"></script>
+    <style>
+      body.loading {
+        display: none;
+        background: #a6cee2;
+      }
+    </style>
   </head>
 
   <!-- Font: http://itouhiro.hatenablog.com/entry/20130602/font -->
 
-  <body>
+  <body class="loading">
     <div id="dummy-content" class="dummy-content"></div>
     <main id="main" class="glassmorphism">
       <header>
