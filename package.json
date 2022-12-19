@@ -27,6 +27,6 @@
     "postcss-import": "^15.0.0",
     "postcss-nested": "^6.0.0",
     "typescript": "^4.8.4",
-    "vite": "^3.2.4"
+    "vite": "^4.0.2"
   }
 }
