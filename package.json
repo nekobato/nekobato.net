@@ -23,10 +23,11 @@
   },
   "homepage": "https://github.com/nekobato/nekobato.net#readme",
   "devDependencies": {
+    "dayjs": "^1.11.7",
     "firebase-tools": "^11.16.1",
-    "postcss-import": "^15.0.0",
-    "postcss-nested": "^6.0.0",
+    "sass": "^1.57.1",
     "typescript": "^4.8.4",
-    "vite": "^3.2.4"
+    "vite": "^3.2.4",
+    "vite-plugin-ejs": "^1.6.4"
   }
 }

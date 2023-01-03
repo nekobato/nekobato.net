@@ -1,4 +1,4 @@
-@import "./reset.pcss";
+@import "./reset.scss";
 
 @font-face {
   font-family: "PixelMplus12";
@@ -98,24 +98,76 @@ dl {
   }
 }
 
-ul {
-  padding: 0 0 0 24px;
-  list-style-type: square;
-  li {
-    position: relative;
-    list-style: none;
-    margin: 12px 0 0 0;
-    &::before {
-      content: "";
-      position: absolute;
-      top: 4px;
-      left: -8px;
-      bottom: 4px;
-      margin: auto;
-      width: 1px;
-      height: 100%;
-      border-radius: 1px;
-      background: #282828;
+.education-list {
+  margin: 16px 0 0;
+  text-align: left;
+  line-height: 1.25;
+  > li {
+    display: block;
+    margin: 24px 0 0 0;
+    border: 0;
+    .term {
+      display: block;
+      font-size: 12px;
+      font-weight: bold;
+    }
+  }
+}
+
+.experience-list {
+  margin: 16px 0 0;
+  text-align: left;
+  line-height: 1.25;
+  > li {
+    display: block;
+    margin: 24px 0 0 0;
+    border: 0;
+    .term,
+    .title,
+    .project,
+    .project-name,
+    .project-term,
+    .highlight {
+      display: block;
+    }
+    .term {
+      font-size: 12px;
+      font-weight: bold;
+    }
+    .title {
+      margin: 4px 0 0 0;
+    }
+    .project {
+      margin: 8px 0 0 16px;
+      font-size: 12px;
+    }
+    .highlights {
+        margin: 4px 0 0;
+    }
+  }
+}
+
+.links,
+.app {
+  ul {
+    padding: 0 0 0 24px;
+    list-style-type: square;
+    li {
+      position: relative;
+      list-style: none;
+      margin: 12px 0 0 0;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 4px;
+        left: -8px;
+        bottom: 4px;
+        margin: auto;
+        width: 1px;
+        height: 100%;
+        border-radius: 1px;
+        background: #282828;
+      }
     }
   }
 }
@@ -131,6 +183,27 @@ footer {
   font-family: PixelMplus12;
   color: rgba(0, 0, 0, 0.64);
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.24);
+}
+
+.social-divider {
+  margin: 56px 0 32px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  hr {
+    border: 0;
+    width: 100%;
+    height: 0px;
+    border-top: 1px dashed #00000030;
+  }
+  span {
+    position: absolute;
+    display: inline-flex;
+    text-align: center;
+    font-size: 12px;
+  }
 }
 
 @media screen and (max-width: 640px) {

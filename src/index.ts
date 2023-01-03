@@ -1,4 +1,4 @@
-import "./style.pcss";
+import "./style.scss";
 
 document.addEventListener("DOMContentLoaded", () => {
   const main = document.querySelector("#main") as HTMLDivElement;
@@ -18,10 +18,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("scroll", onScrollWindow, { passive: true });
   window.addEventListener("resize", setDummyContentHeight, { passive: true });
-  main.addEventListener("scroll", e => {
+  main.addEventListener("scroll", (e) => {
     e.stopPropagation();
   });
 
   setDummyContentHeight();
-  document.querySelector('body')?.classList.remove('loading');
+  document.querySelector("body")?.classList.remove("loading");
 });
