@@ -26,45 +26,45 @@ export const resume = {
     "Vue",
     "Node.js",
     "Express",
-    "Ruby on Rails",
+    // "Ruby on Rails",
     "Redis",
-    "Docker",
-    "Kubernetes",
+    // "Docker",
+    // "Kubernetes",
     "Git",
     "GitHub",
   ],
   experiences: [
-    {
-      company: "株式会社 U-NOTE",
-      role: "業務委託",
-      startDate: "2012-04",
-      endDate: "2015-03",
-      projects: [
-        {
-          name: "サービス立ち上げ〜運用",
-          startDate: "2012-04",
-          endDate: "2015-03",
-          highlights: [
-            "PHP(CodeIgniter)とjQueryでのサービス開発",
-            "contenteditableとjQueryでのWYSIWYGエディタの開発",
-          ],
-        },
-      ],
-    },
-    {
-      company: "paytner株式会社",
-      role: "業務委託",
-      startDate: "2021-04",
-      endDate: "",
-      projects: [
-        {
-          name: "サービス立ち上げ〜運用",
-          startDate: "2021-04",
-          endDate: "",
-          highlights: ["Nuxt.jsとTypeScriptでのサービス開発"],
-        },
-      ],
-    },
+    // {
+    //   company: "株式会社 U-NOTE",
+    //   role: "業務委託",
+    //   startDate: "2012-04",
+    //   endDate: "2015-03",
+    //   projects: [
+    //     {
+    //       name: "サービス立ち上げ〜運用",
+    //       startDate: "2012-04",
+    //       endDate: "2015-03",
+    //       highlights: [
+    //         "PHP(CodeIgniter)とjQueryでのサービス開発",
+    //         "contenteditableとjQueryでのWYSIWYGエディタの開発",
+    //       ],
+    //     },
+    //   ],
+    // },
+    // {
+    //   company: "paytner株式会社",
+    //   role: "業務委託",
+    //   startDate: "2021-04",
+    //   endDate: "",
+    //   projects: [
+    //     {
+    //       name: "サービス立ち上げ〜運用",
+    //       startDate: "2021-04",
+    //       endDate: "",
+    //       highlights: ["Nuxt.jsとTypeScriptでのサービス開発"],
+    //     },
+    //   ],
+    // },
     {
       company: "株式会社モバイルファクトリー",
       role: "Webフロントエンドエンジニア",
@@ -131,8 +131,8 @@ export const resume = {
       projects: [
         {
           name: "Design System Web",
-          startDate: "2019-10",
-          endDate: "2019-12",
+          startDate: "2020-01",
+          endDate: "2020-09",
           highlights: ["Design System Webの開発"],
         },
       ],
@@ -145,8 +145,8 @@ export const resume = {
       projects: [
         {
           name: "Design System Web",
-          startDate: "2019-10",
-          endDate: "2019-12",
+          startDate: "2020-10",
+          endDate: "2022-07",
           highlights: ["Design System Webの開発・運用"],
         },
       ],
@@ -154,12 +154,12 @@ export const resume = {
     {
       company: "株式会社RABO",
       role: "Webフロントエンドエンジニア",
-      startDate: "2022-01",
+      startDate: "2023-01",
       endDate: "",
       projects: [
         {
           name: "Catlog Web",
-          startDate: "2022-01",
+          startDate: "2023-01",
           endDate: "",
           highlights: [],
         },

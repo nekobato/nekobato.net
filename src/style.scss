@@ -135,11 +135,18 @@ dl {
       font-weight: bold;
     }
     .title {
+      font-weight: bold;
       margin: 4px 0 0 0;
     }
     .project {
       margin: 8px 0 0 16px;
       font-size: 12px;
+      .project-term {
+        color: rgba(0, 0, 0, 0.5);
+      }
+      .project-name {
+        margin: 4px 0 0 0;
+      }
     }
     .highlights {
         margin: 4px 0 0;
