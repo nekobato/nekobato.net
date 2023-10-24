@@ -25,7 +25,7 @@
   "devDependencies": {
     "dayjs": "^1.11.10",
     "firebase-tools": "^12.5.4",
-    "sass": "^1.69.0",
+    "sass": "^1.69.4",
     "typescript": "^5.2.2",
     "vite": "^4.5.0",
     "vite-plugin-ejs": "^1.6.4"
