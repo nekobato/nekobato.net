@@ -9,8 +9,8 @@ devDependencies:
     specifier: ^1.11.10
     version: 1.11.10
   firebase-tools:
-    specifier: ^13.1.0
-    version: 13.1.0
+    specifier: ^13.2.1
+    version: 13.2.1
   sass:
     specifier: ^1.69.5
     version: 1.70.0
@@ -1924,8 +1924,8 @@ packages:
       - supports-color
     dev: true
 
-  /firebase-tools@13.1.0:
-    resolution: {integrity: sha512-kY3p3nCv3kjf90AZMhrMu4PT6/otI1kcZGpJJkN9cqBbvj/nNYnnCVy4bXdCVqgCX1+s4G4FwuoW07f9xv/kXw==}
+  /firebase-tools@13.2.1:
+    resolution: {integrity: sha512-Dx0h9P4m0T1wWz6Yjk+VOZA/Fef1iM09gpbAxBl+2GAO3KcN3kQf8fvhlzkisCqAnVxB8U2rYRI6ZR1JwY+cqQ==}
     engines: {node: '>=18.0.0 || >=20.0.0'}
     hasBin: true
     dependencies:
