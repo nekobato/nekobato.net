@@ -38,7 +38,7 @@ main {
   margin: auto;
   padding: 0 16px 32px;
   width: 320px;
-  height: 480px;
+  height: 560px;
   border: 1px solid #ddd;
   border-radius: 16px;
   text-align: left;
@@ -57,7 +57,7 @@ main::-webkit-scrollbar {
 header {
   padding: 0 0 32px;
   h1 {
-    padding: 8px 0 0 0;
+    padding: 16px 0 0 0;
     text-align: left;
     font-size: 24px;
     font-weight: bold;
@@ -163,6 +163,8 @@ dl {
       position: relative;
       list-style: none;
       margin: 12px 0 0 0;
+      font-size: 16px;
+      font-weight: bold;
       &::before {
         content: "";
         position: absolute;
