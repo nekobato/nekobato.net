@@ -10,25 +10,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
-      - name: Use Node.js v16.x
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
+      - name: Install Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: 16.x
-          registry-url: "https://registry.npmjs.org"
-      - name: Cache node modules
-        uses: actions/cache@v1
+          node-version: 20
+      - uses: pnpm/action-setup@v3
         with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-      - name: npm install
-        run: npm ci
-        env:
-          CI: true
+          version: 8
       - name: build
-        run: npm run build
+        run: pnpm run build
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
