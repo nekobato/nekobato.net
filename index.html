@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
+    <%
+      $siteTitle = "nekobato.net";
+      $siteImage = "https://nekobato.net/images/nekobato.png";
+      $siteUrl = "https://nekobato.net";
+    %>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>nekobato.net</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta property="og:image" content="images/nekobato.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
+    <title><%= $siteTitle %></title>
+    <meta name="twitter:card" content="summary">
+    <meta property="og:site_name" content="<%= $siteTitle %>">
+    <meta property="og:title" content="<%= $siteTitle %>">
+    <meta property="og:description" content="nekobato no homepage">
+    <meta property="og:image" content="<%= $siteImage %>" />
+    <meta property="og:url" content="<%= $siteUrl %>">
+    <meta name="apple-mobile-web-app-title" content="<%= $siteTitle %>">
+    <link rel="apple-touch-icon-precomposed" type="image/png" href="<%= $siteImage %>">
+    <link rel="canonical" href="<%= $siteUrl %>">
+    <link rel="icon" href="<%= $siteImage %>">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <script type="module" src="/src/index.ts" defer></script>
     <style>
