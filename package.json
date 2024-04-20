@@ -27,7 +27,7 @@
     "firebase-tools": "^13.7.3",
     "sass": "^1.75.0",
     "typescript": "^5.4.5",
-    "vite": "^5.2.8",
-    "vite-plugin-ejs": "^1.6.4"
+    "vite": "^5.2.10",
+    "vite-plugin-ejs": "^1.7.0"
   }
 }
