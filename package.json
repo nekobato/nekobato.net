@@ -24,7 +24,7 @@
   "homepage": "https://github.com/nekobato/nekobato.net#readme",
   "devDependencies": {
     "dayjs": "^1.11.10",
-    "firebase-tools": "^13.7.3",
+    "firebase-tools": "^13.7.5",
     "sass": "^1.75.0",
     "typescript": "^5.4.5",
     "vite": "^5.2.10",
