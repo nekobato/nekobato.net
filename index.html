@@ -107,6 +107,36 @@
             <li>
               <div>
                 <a
+                  href="https://github.com/nekobato/hazy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >hazy</a
+                >
+              </div>
+              <img
+                class="badge"
+                alt="GitHub tag (latest by date)"
+                src="https://img.shields.io/github/v/release/nekobato/hazy?label=version"
+              />
+              <img
+                class="badge"
+                alt="Desktop Application"
+                src="https://img.shields.io/badge/Desktop_Application-1b1b1d"
+              />
+              <img
+                class="badge"
+                alt="macOS"
+                src="https://img.shields.io/badge/macOS-1b1b1d?logo=apple"
+              />
+              <img
+                class="badge"
+                alt="macOS"
+                src="https://img.shields.io/badge/Windows-1b1b1d?logo=windows"
+              />
+            </li>
+            <li>
+              <div>
+                <a
                   href="https://github.com/nekobato/CommandCircle"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -117,6 +147,21 @@
                 class="badge"
                 alt="GitHub tag (latest by date)"
                 src="https://img.shields.io/github/v/release/nekobato/CommandCircle?label=version"
+              />
+              <img
+                class="badge"
+                alt="Desktop Application"
+                src="https://img.shields.io/badge/Desktop_Application-1b1b1d"
+              />
+              <img
+                class="badge"
+                alt="macOS"
+                src="https://img.shields.io/badge/macOS-1b1b1d?logo=apple"
+              />
+              <img
+                class="badge"
+                alt="macOS"
+                src="https://img.shields.io/badge/Windows-1b1b1d?logo=windows"
               />
             </li>
             <li>
@@ -133,6 +178,16 @@
                 alt="GitHub tag (latest by date)"
                 src="https://img.shields.io/github/v/release/nekobato/polidium?label=version"
               />
+              <img
+                class="badge"
+                alt="Desktop Application"
+                src="https://img.shields.io/badge/Desktop_Application-1b1b1d"
+              />
+              <img
+                class="badge"
+                alt="macOS"
+                src="https://img.shields.io/badge/macOS-1b1b1d?logo=apple"
+              />
             </li>
             <li>
               <div>
@@ -147,6 +202,11 @@
                 class="badge"
                 alt="GitHub release (latest by date)"
                 src="https://img.shields.io/github/v/release/nekobato/davneko?label=version"
+              />
+              <img
+                class="badge"
+                alt="Web Application"
+                src="https://img.shields.io/badge/Desktop_Application-1b1b1d"
               />
             </li>
             <li>
@@ -336,52 +396,58 @@
         </dl>
       </section>
 
-      <div class="social-divider">
-        <span>以下 社会的な情報</span>
+      <details>
+        <summary class="social-divider">
+          <div>
+            <span>以下 社会的な情報</span>
+            <img class="chevron down" src="icons/chevron-down.svg" />
+            <img class="chevron up" src="icons/chevron-up.svg" />
+          </div>
+        </summary>
+
         <hr />
-      </div>
-
-      <section class="resume-education">
-        <h2>学歴</h2>
-        <ul class="education-list">
-          <% resume.educations.forEach(ed => { %>
-          <li>
-            <span class="term"><%= ed.startDate %> - <%= ed.endDate %></span>
-            <div class="title">
-              <span class="institution"><%= ed.institution %></span>
-              <span class="area"><%= ed.area %></span>
-              <span class="study-type">(<%= ed.studyType %>)</span>
-            </div>
-          </li>
-          <% }) %>
-        </ul>
-      </section>
-
-      <section class="resume-experience">
-        <h2>職歴</h2>
-        <ul class="experience-list">
-          <% resume.experiences.forEach(ex => { %>
-          <li>
-            <span class="term"><%= ex.startDate %> - <%= ex.endDate %></span>
-            <span class="title"><%= ex.company %>（<%= ex.role %>)</span>
-            <% ex.projects.forEach(project => { %>
-            <div class="project">
-              <span class="project-term"
-                ><%= project.startDate %> - <%= project.endDate %></span
-              >
-              <span class="project-name"><%= project.name %></span>
-              <div class="highlights">
-                <% project.highlights.forEach(highlight => { %>
-                <span class="highlight"><%= highlight %></span>
-                <% }) %>
+        <section class="resume-education social-info">
+          <h2>学歴</h2>
+          <ul class="education-list">
+            <% resume.educations.forEach(ed => { %>
+            <li>
+              <span class="term"><%= ed.startDate %> - <%= ed.endDate %></span>
+              <div class="title">
+                <span class="institution"><%= ed.institution %></span>
+                <span class="area"><%= ed.area %></span>
+                <span class="study-type">(<%= ed.studyType %>)</span>
               </div>
-            </div>
+            </li>
             <% }) %>
-            <span></span>
-          </li>
-          <% }) %>
-        </ul>
-      </section>
+          </ul>
+        </section>
+
+        <section class="resume-experience social-info">
+          <h2>職歴</h2>
+          <ul class="experience-list">
+            <% resume.experiences.forEach(ex => { %>
+            <li>
+              <span class="term"><%= ex.startDate %> - <%= ex.endDate %></span>
+              <span class="title"><%= ex.company %>（<%= ex.role %>)</span>
+              <% ex.projects.forEach(project => { %>
+              <div class="project">
+                <span class="project-term"
+                  ><%= project.startDate %> - <%= project.endDate %></span
+                >
+                <span class="project-name"><%= project.name %></span>
+                <div class="highlights">
+                  <% project.highlights.forEach(highlight => { %>
+                  <span class="highlight"><%= highlight %></span>
+                  <% }) %>
+                </div>
+              </div>
+              <% }) %>
+              <span></span>
+            </li>
+            <% }) %>
+          </ul>
+        </section>
+      </details>
     </main>
     <footer><small>2009 - 2023 (c) nekobato.net</small></footer>
   </body>
