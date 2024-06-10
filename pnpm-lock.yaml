@@ -9,8 +9,8 @@ devDependencies:
     specifier: ^1.11.11
     version: 1.11.11
   firebase-tools:
-    specifier: ^13.10.1
-    version: 13.10.1
+    specifier: ^13.11.2
+    version: 13.11.2
   sass:
     specifier: ^1.77.1
     version: 1.77.1
@@ -337,17 +337,6 @@ packages:
     dependencies:
       '@grpc/proto-loader': 0.7.13
       '@js-sdsl/ordered-map': 4.4.2
-    dev: true
-
-  /@grpc/proto-loader@0.7.12:
-    resolution: {integrity: sha512-DCVwMxqYzpUCiDMl7hQ384FqP4T3DbNpXU8pt681l3UWCip1WUiD5JrkImUwCB9a7f2cq4CUTmi5r/xIMRPY1Q==}
-    engines: {node: '>=6'}
-    hasBin: true
-    dependencies:
-      lodash.camelcase: 4.3.0
-      long: 5.2.3
-      protobufjs: 7.3.0
-      yargs: 17.7.2
     dev: true
 
   /@grpc/proto-loader@0.7.13:
@@ -1856,8 +1845,8 @@ packages:
       - supports-color
     dev: true
 
-  /firebase-tools@13.10.1:
-    resolution: {integrity: sha512-5UHbhCZbhGWi91gVEhmQTqv9LQUlcmAMtLof6SPVYz4ur+iLpW21TclTURUvneO+uR40bVmYLUoV9kyGmTWy5g==}
+  /firebase-tools@13.11.2:
+    resolution: {integrity: sha512-LNvaNO/hLeTo2JLuz2HQoXnGVhgD51ztny7ozFh2XTsAHuyTRtwmoXFFIBsvW3UGguiPAXR1LetoTVXXHB7oHA==}
     engines: {node: '>=18.0.0 || >=20.0.0'}
     hasBin: true
     dependencies:
@@ -2163,7 +2152,7 @@ packages:
     engines: {node: '>=14'}
     dependencies:
       '@grpc/grpc-js': 1.10.8
-      '@grpc/proto-loader': 0.7.12
+      '@grpc/proto-loader': 0.7.13
       '@types/long': 4.0.2
       abort-controller: 3.0.0
       duplexify: 4.1.3
