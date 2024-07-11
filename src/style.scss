@@ -162,7 +162,7 @@ dl {
     li {
       position: relative;
       list-style: none;
-      margin: 12px 0 0 0;
+      margin: 16px 0 0 0;
       font-size: 16px;
       font-weight: bold;
       &::before {
@@ -180,6 +180,20 @@ dl {
 
       .title {
         margin-bottom: 4px;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      p.description {
+        margin: 4px auto auto 0;
+        font-size: 14px;
+        line-height: 21px;
+      }
+      .badges {
+        margin-top: 8px;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 4px;
       }
     }
   }
