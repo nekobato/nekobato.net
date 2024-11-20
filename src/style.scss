@@ -1,4 +1,5 @@
 @import "./reset.scss";
+@import "./variables.scss";
 
 @font-face {
   font-family: "PixelMplus12";
@@ -9,15 +10,17 @@
 }
 
 a {
-  text-decoration-color: hsla(200, 30%, 50%, 1);
+  text-decoration-color: var(--color-teal-100);
+  text-underline-position: under;
 
   &:link,
   &:visited {
-    color: hsla(200, 30%, 30%, 1);
+    color: var(--color-teal-700);
   }
 
   &:hover {
-    color: hsla(200, 30%, 60%, 1);
+    color: var(--color-teal-600);
+    text-decoration-color: var(--color-teal-300);
   }
 }
 
@@ -31,7 +34,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #a6cee2;
+  background: var(--color-teal-100);
 }
 
 main {
@@ -39,13 +42,13 @@ main {
   padding: 0 16px 32px;
   width: 320px;
   height: 560px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--color-grey-100);
   border-radius: 16px;
   text-align: left;
   font-size: 14px;
   overflow-y: scroll;
   font-family: PixelMplus12;
-  color: #252525;
+  color: var(--color-grey-700);
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
@@ -142,7 +145,7 @@ dl {
       margin: 8px 0 0 16px;
       font-size: 12px;
       .project-term {
-        color: rgba(0, 0, 0, 0.5);
+        color: var(--color-black-t500);
       }
       .project-name {
         margin: 4px 0 0 0;
@@ -162,7 +165,7 @@ dl {
     li {
       position: relative;
       list-style: none;
-      margin: 16px 0 0 0;
+      margin: 24px 0 0 0;
       font-size: 16px;
       font-weight: bold;
       &::before {
@@ -175,7 +178,7 @@ dl {
         width: 1px;
         height: 100%;
         border-radius: 1px;
-        background: #282828;
+        background: var(--color-grey-700);
       }
 
       .title {
@@ -187,7 +190,7 @@ dl {
         margin: 4px auto auto 0;
         font-size: 14px;
         line-height: 21px;
-        color: #535353;
+        color: var(--color-grey-600);
       }
       .badges {
         margin-top: 8px;
@@ -209,8 +212,11 @@ footer {
   right: 8px;
   bottom: 8px;
   font-family: PixelMplus12;
-  color: rgba(0, 0, 0, 0.64);
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.24);
+  color: var(--color-grey-500);
+
+  @media screen and (max-width: 640px) {
+    position: absolute;
+  }
 }
 
 .social-details {
@@ -238,15 +244,23 @@ footer {
     justify-content: center;
     height: 16px;
     width: 100%;
+    cursor: pointer;
+
+    &:hover {
+      div {
+        background-color: var(--color-grey-50);
+      }
+    }
+
     hr {
       border: 0;
       width: 100%;
       height: 0px;
-      border-top: 1px dashed #00000030;
+      border-top: 2px dashed var(--color-black-t200);
     }
     div {
-      background-color: #d5e1e7;
-      border: 1px solid #00000030;
+      background-color: var(--color-grey-100);
+      border: 1px solid var(--color-black-t300);
       padding: 4px 8px;
       position: absolute;
       display: inline-flex;
@@ -254,6 +268,7 @@ footer {
       font-size: 14x;
 
       > .chevron {
+        margin-left: 8px;
         width: 16px;
         height: 16px;
       }
@@ -278,10 +293,10 @@ footer {
 
 .glassmorphism {
   /* From https://css.glass */
-  background: rgba(255, 255, 255, 0.4);
+  background: var(--color-white-t400);
   border-radius: 16px;
-  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 32px var(--color-black-t50);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.32);
+  border: 1px solid var(--color-white-t300);
 }
