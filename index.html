@@ -1,30 +1,54 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <% $siteTitle = "nekobato.net"; $siteImage =
-    "https://nekobato.net/images/nekobato.png"; $siteUrl =
-    "https://nekobato.net"; %>
     <meta charset="utf-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content"
     />
-    <title><%= $siteTitle %></title>
+    <title><%= meta.title %></title>
+    <meta name="description" content="<%= meta.description %>" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#a6cee2" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="<%= meta.url %>" />
+    <meta property="og:title" content="<%= meta.title %>" />
+    <meta property="og:description" content="<%= meta.description %>" />
+    <meta property="og:image" content="<%= meta.image %>" />
+    <meta property="og:url" content="<%= meta.url %>" />
     <meta name="twitter:card" content="summary" />
-    <meta property="og:site_name" content="<%= $siteTitle %>" />
-    <meta property="og:title" content="<%= $siteTitle %>" />
-    <meta property="og:description" content="nekobato no homepage" />
-    <meta property="og:image" content="<%= $siteImage %>" />
-    <meta property="og:url" content="<%= $siteUrl %>" />
-    <meta name="apple-mobile-web-app-title" content="<%= $siteTitle %>" />
+    <meta name="twitter:title" content="<%= meta.title %>" />
+    <meta name="twitter:description" content="<%= meta.description %>" />
+    <meta name="twitter:image" content="<%= meta.image %>" />
+    <meta name="twitter:site" content="@<%= meta.author %>" />
+    <meta name="twitter:creator" content="@<%= meta.author %>" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="<%= meta.title %>" />
+    <link rel="apple-touch-icon" href="<%= meta.image %>" />
+    <link rel="canonical" href="<%= meta.url %>" />
+    <link rel="icon" type="image/png" href="<%= meta.image %>" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "<%= meta.title %>",
+        "url": "<%= meta.url %>",
+        "description": "<%= meta.description %>",
+        "image": "<%= meta.image %>",
+        "author": {
+          "@type": "Person",
+          "name": "<%= meta.author %>"
+        }
+      }
+    </script>
     <link
-      rel="apple-touch-icon-precomposed"
-      type="image/png"
-      href="<%= $siteImage %>"
+      rel="preload"
+      href="/PixelMplus12-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
     />
-    <link rel="canonical" href="<%= $siteUrl %>" />
-    <link rel="icon" href="<%= $siteImage %>" />
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <script type="module" src="/src/index.ts" defer></script>
     <style>
       body.loading {

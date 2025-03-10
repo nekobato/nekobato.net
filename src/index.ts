@@ -23,16 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
         main.scrollTop / main.clientHeight - window.scrollY / window.innerHeight
       ) > 0.1
     ) {
-      console.log(
-        main.scrollHeight / main.clientHeight,
-        window.scrollY / window.innerHeight,
-        Math.abs(
-          main.scrollHeight / main.clientHeight -
-            window.scrollY / window.innerHeight
-        ),
-        mainScrolling,
-        windowScrolling
-      );
       if (windowScrolling) {
         main.scrollTo(
           0,

@@ -2,6 +2,15 @@ import dayjs from "dayjs";
 
 const experienceYears = dayjs().diff("2012-04-01", "year");
 
+export const meta = {
+  title: "nekobato.net",
+  description: "nekobatoのホームページ",
+  keywords: "nekobato.net",
+  author: "nekobato",
+  image: "https://nekobato.net/images/nekobato.png",
+  url: "https://nekobato.net",
+};
+
 export const me = {
   name: "郡山 隼人",
   nameEn: "KORIYAMA Hayato",
