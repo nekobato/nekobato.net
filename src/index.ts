@@ -6,10 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "#dummy-content"
   ) as HTMLDivElement;
 
-  let windowScrolling = false;
-  let mainScrolling = false;
-  let adjusted = false;
-  let resetTimeout: number;
+  let syncing = false;
 
   const setDummyContentHeight = () => {
     if (!dummyContent || !main) return;
@@ -17,54 +14,36 @@ document.addEventListener("DOMContentLoaded", () => {
       window.innerHeight * (main.scrollHeight / main.clientHeight) + "px";
   };
 
-  const adjustScrollDiff = () => {
-    if (
-      Math.abs(
-        main.scrollTop / main.clientHeight - window.scrollY / window.innerHeight
-      ) > 0.1
-    ) {
-      if (windowScrolling) {
-        main.scrollTo(
-          0,
-          (window.scrollY / window.innerHeight) * main.clientHeight
-        );
-      } else if (mainScrolling) {
-        window.scrollTo(
-          0,
-          (main.scrollTop / main.clientHeight) * window.innerHeight
-        );
-      }
-      adjusted = true;
-      clearTimeout(resetTimeout);
-    } else {
-      if (adjusted) {
-        adjusted = false;
-        windowScrolling = false;
-        mainScrolling = false;
-      } else {
-        resetTimeout = setTimeout(() => {
-          windowScrolling = false;
-          mainScrolling = false;
-        }, 100);
-      }
-    }
-    windowScrolling = false;
-    window.requestAnimationFrame(adjustScrollDiff);
+  const syncFromWindow = () => {
+    if (!main || syncing) return;
+    syncing = true;
+    const ratio = window.scrollY / window.innerHeight;
+    main.scrollTo(0, ratio * main.clientHeight);
+    requestAnimationFrame(() => {
+      syncing = false;
+    });
   };
 
-  window.addEventListener("scroll", () => {
-    if (mainScrolling || windowScrolling) return;
-    windowScrolling = true;
-  });
+  const syncFromMain = () => {
+    if (!main || syncing) return;
+    syncing = true;
+    const ratio = main.scrollTop / main.clientHeight;
+    window.scrollTo({ top: ratio * window.innerHeight });
+    requestAnimationFrame(() => {
+      syncing = false;
+    });
+  };
 
-  main.addEventListener("scroll", () => {
-    if (mainScrolling || windowScrolling) return;
-    mainScrolling = true;
-  });
-
+  window.addEventListener("scroll", syncFromWindow, { passive: true });
+  main.addEventListener("scroll", syncFromMain, { passive: true });
   window.addEventListener("resize", setDummyContentHeight);
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      syncing = false;
+    }
+  });
 
   setDummyContentHeight();
   document.querySelector("body")?.classList.remove("loading");
-  window.requestAnimationFrame(adjustScrollDiff);
 });

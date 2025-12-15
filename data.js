@@ -19,7 +19,6 @@ export const me = {
   timezone: "Asia/Tokyo",
   role: "Web Frontend Engineer",
   email: "nekobato@gmail.com",
-  phone: "090-7301-4492",
   website: "https://nekobato.net",
   github: "https://github.com/nekobato",
   twitter: "https://twitter.com/nekobato",
@@ -90,7 +89,7 @@ export const resume = {
           ],
         },
         {
-          summary: "ブロックチェーン新規開発",
+          name: "ブロックチェーン新規開発",
           startDate: "2018-01",
           endDate: "2018-06",
           highlights: [
