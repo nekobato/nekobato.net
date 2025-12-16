@@ -1,0 +1,10 @@
+{
+  "name": "nekobato-net",
+  "main": "worker/index.ts",
+  "compatibility_date": "2025-12-15",
+  // Vite build output served as static assets via Workers Assets binding
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS"
+  }
+}

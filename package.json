@@ -7,9 +7,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview",
-    "deploy": "firebase deploy",
-    "login": "firebase login"
+    "deploy": "wrangler deploy"
   },
   "repository": {
     "type": "git",
@@ -23,11 +21,12 @@
   },
   "homepage": "https://github.com/nekobato/nekobato.net#readme",
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20251213.0",
     "dayjs": "^1.11.19",
-    "firebase-tools": "^15.0.0",
     "sass": "^1.96.0",
     "typescript": "^5.9.3",
     "vite": "^7.2.7",
-    "vite-plugin-ejs": "^1.7.0"
+    "vite-plugin-ejs": "^1.7.0",
+    "wrangler": "^4.54.0"
   }
 }
