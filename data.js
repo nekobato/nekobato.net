@@ -28,18 +28,11 @@ export const me = {
 
 export const resume = {
   skills: [
-    "JavaScript",
     "TypeScript",
     "React",
     "Vue",
     "Node.js",
-    "Express",
-    // "Ruby on Rails",
-    "Redis",
-    // "Docker",
-    // "Kubernetes",
-    "Git",
-    "GitHub",
+    "hono",
   ],
   experiences: [
     // {
