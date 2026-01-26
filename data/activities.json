@@ -1,0 +1,59 @@
+[
+  {
+    "term": "2022-07-20 PWA Night vol.41 ～Design〜",
+    "title": "メルカリDesign Systemの実装と責務",
+    "url": "https://docs.google.com/presentation/d/1RGMV6-bVkfdTUDbWkTr1XHqCY-_-sdR8umG5r47OOBE/edit#slide=id.g13e7dc8e0dd_1_462"
+  },
+  {
+    "term": "2019-07-26 Gotanda.js #12 in ZEALS",
+    "title": "Migrating to BrowserView in Electron",
+    "url": "https://speakerdeck.com/nekobato/migration-to-browserwindow-in-electron"
+  },
+  {
+    "term": "2019-07-03 Mercari x Merpay Frontend Tech Talk vol.2",
+    "title": "Building frontend development environment and web performance monitoring",
+    "url": "https://speakerdeck.com/nekobato/building-frontend-development-environment-and-web-performance-monitoring"
+  },
+  {
+    "term": "2019-02-07 Meguro.es #19 @ oRo",
+    "title": "おいでよdenoland",
+    "url": "https://scrapbox.io/nekobatoken/Meguro.es_%2319_-_%E3%81%8A%E3%81%84%E3%81%A7%E3%82%88Denoland"
+  },
+  {
+    "term": "2016-12-02 Gotanda.js #6 in Oisix",
+    "title": "最近のElectronの話 (仮)",
+    "url": "https://speakerdeck.com/nekobato/electronnian-bao"
+  },
+  {
+    "term": "2018-09-20 Meguro.css #3 @ oRo",
+    "title": "Mobile animation tuning",
+    "url": "https://speakerdeck.com/nekobato/mobile-animation-tuning"
+  },
+  {
+    "term": "2018-05-29 Roppongi.js #3@ウォンテッドリー",
+    "title": "P2P Netfwork with Node.js",
+    "url": "https://speakerdeck.com/nekobato/p2p-netfwork-with-node-dot-js"
+  },
+  {
+    "term": "2016-09-02 Gotanda.js #5 in TORETA",
+    "title": "Vue.js 0.12から2.0.0への移行",
+    "url": "https://www.slideshare.net/hayatokoriyama7/vuejs-012-to-200-gotandajs-5-65623849"
+  },
+  {
+    "term": "2016-01-08 Gotanda.js #2 〜JS新年会〜 in Gaiax",
+    "title": "Electronで動画ながら見アプリを作った話",
+    "url": "https://www.slideshare.net/hayatokoriyama7/electron-56820071"
+  },
+  {
+    "term": "2015-10-28 Gotanda.js #1 in Mobile Factory",
+    "title": "webpackとcomponent時代のfile structure"
+  },
+  {
+    "term": "2004-06-19 Online",
+    "title": "Flash・動画文芸祭"
+  },
+  {
+    "term": "2004-12-31 Online",
+    "title": "紅白Flash合戦"
+  }
+]

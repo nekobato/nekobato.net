@@ -94,9 +94,12 @@ dl {
   text-align: left;
   line-height: 1.25;
   dt {
+    color: var(--color-grey-600);
+    font-size: 12px;
     margin: 24px 0 0 0;
   }
   dd {
+    font-size: 16px;
     margin: 4px 0 0 0;
   }
 }
@@ -178,7 +181,7 @@ dl {
         width: 1px;
         height: 100%;
         border-radius: 1px;
-        background: var(--color-grey-700);
+        background: var(--color-grey-200);
       }
 
       .title {
@@ -187,7 +190,7 @@ dl {
         font-weight: bold;
       }
       p.description {
-        margin: 4px auto auto 0;
+        margin: 16px auto auto 0;
         font-size: 14px;
         line-height: 21px;
         color: var(--color-grey-600);
@@ -246,9 +249,17 @@ footer {
     width: 100%;
     cursor: pointer;
 
+    &::before,
+    &::after {
+      content: "";
+      width: 100%;
+      height: 0px;
+      border-top: 1px dashed var(--color-black-t400);
+    }
+
     &:hover {
-      div {
-        background-color: var(--color-grey-50);
+      .summary-content {
+        background-color: var(--color-white-t300);
       }
     }
 
@@ -258,17 +269,18 @@ footer {
       height: 0px;
       border-top: 2px dashed var(--color-black-t200);
     }
-    div {
-      background-color: var(--color-grey-100);
-      border: 1px solid var(--color-black-t300);
-      padding: 4px 8px;
-      position: absolute;
+    .summary-content {
+      width: 80px;
+      flex: 0 0 auto;
+      border: 1px dashed var(--color-black-t400);
+      border-radius: 4px;
+      padding: 8px 8px 8px 10px;
       display: inline-flex;
       align-items: center;
-      font-size: 14x;
+      font-size: 14px;
 
       > .chevron {
-        margin-left: 8px;
+        margin: auto 0 auto auto;
         width: 16px;
         height: 16px;
       }
