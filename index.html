@@ -88,341 +88,52 @@
       <section class="links">
         <h2>リンク</h2>
         <ul>
+          <% links.forEach(link => { %>
+          <% const isExternal = link.href.startsWith("http"); %>
           <li>
             <a
-              href="https://github.com/nekobato"
-              target="_blank"
-              rel="noopener noreferrer"
-              >ギットハブ</a
+              href="<%= link.href %>"
+              <% if (isExternal) { %>target="_blank" rel="noopener noreferrer"<% } %>
+              ><%= link.label %></a
             >
           </li>
-          <li>
-            <a
-              href="https://x.com/nekobato"
-              target="_blank"
-              rel="noopener noreferrer"
-              >エックス</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://scrapbox.io/nekobatoken/"
-              target="_blank"
-              rel="noopener noreferrer"
-              >コセンス</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://sizu.me/nekobato/"
-              target="_blank"
-              rel="noopener noreferrer"
-              >ブログ</a
-            >
-          </li>
-          <li>
-            <a href="mailto:nekobato@gmail.com">メール</a>
-          </li>
+          <% }) %>
         </ul>
       </section>
       <section class="portfolio">
         <h2>つくったもの</h2>
         <div class="app">
           <ul>
+            <% portfolio.works.forEach(item => { %>
             <li>
               <div class="title">
                 <a
-                  href="https://github.com/nekobato/soliataire"
+                  href="<%= item.url %>"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >Solitaire</a
+                  ><%= item.title %></a
                 >
               </div>
+              <% if (item.description || item.descriptionHtml) { %>
               <p class="description">
-                TUIで動作するソリティアゲーム
+                <% if (item.descriptionHtml) { %>
+                <%- item.descriptionHtml %>
+                <% } else { %>
+                <%= item.description %>
+                <% } %>
               </p>
+              <% } %>
               <div class="badges">
+                <% item.badges.forEach(badge => { %>
                 <img
                   class="badge"
-                  alt="npm version"
-                  src="https://img.shields.io/npm/v/%40nekobato%2Fsolitaire"
+                  alt="<%= badge.alt %>"
+                  src="<%= badge.src %>"
                 />
-                <img
-                  class="badge"
-                  alt="CLI Application"
-                  src="https://img.shields.io/badge/CLI-868686"
-                />
+                <% }) %>
               </div>
             </li>
-            <li>
-              <div class="title">
-                <a
-                  href="https://github.com/nekobato/DotE"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >DotE</a
-                >
-              </div>
-              <p class="description">
-                ながら見特化のスリムなFediverseクライアント
-              </p>
-              <div class="badges">
-                <img
-                  class="badge"
-                  alt="GitHub tag (latest by date)"
-                  src="https://img.shields.io/github/v/release/nekobato/DotE?label=version"
-                />
-                <img
-                  class="badge"
-                  alt="Desktop Application"
-                  src="https://img.shields.io/badge/Desktop_Application-868686"
-                />
-                <img
-                  class="badge"
-                  alt="macOS"
-                  src="https://img.shields.io/badge/macOS-868686?logo=apple"
-                />
-                <img
-                  class="badge"
-                  alt="Windows"
-                  src="https://img.shields.io/badge/Windows-868686?logo=windows"
-                />
-              </div>
-            </li>
-            <li>
-              <div class="title">
-                <a
-                  href="https://github.com/nekobato/RoundDrop"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >RoundDrop</a
-                >
-              </div>
-              <p class="description">
-                コマンドサークル型アプリケーションランチャー
-              </p>
-              <div class="badges">
-                <img
-                  class="badge"
-                  alt="GitHub tag (latest by date)"
-                  src="https://img.shields.io/github/v/release/nekobato/RoundDrop?label=version"
-                />
-                <img
-                  class="badge"
-                  alt="Desktop Application"
-                  src="https://img.shields.io/badge/Desktop_Application-868686"
-                />
-                <img
-                  class="badge"
-                  alt="macOS"
-                  src="https://img.shields.io/badge/macOS-868686?logo=apple"
-                />
-              </div>
-            </li>
-            <li>
-              <div class="title">
-                <a
-                  href="https://github.com/nekobato/scraplinker"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >ScrapLinker</a
-                >
-              </div>
-              <p class="description">
-                開いているページのURLとタイトルを
-                <a href="https://cosen.se">Cosense</a>
-                のリンク形式にするChromeエクステンション
-              </p>
-              <div class="badges">
-                <img
-                  class="badge"
-                  alt="GitHub release (latest by date)"
-                  src="https://img.shields.io/github/v/release/nekobato/scraplinker?label=version"
-                />
-                <img
-                  class="badge"
-                  alt="Chrome Extension"
-                  src="https://img.shields.io/badge/Chrome_Extension-868686"
-                />
-              </div>
-            </li>
-            <li>
-              <div class="title">
-                <a
-                  href="https://github.com/nekobato/Torepe"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Torepe</a
-                >
-              </div>
-              <p class="description">
-                画像と実装を重ねて比較するための画像ビューアー
-              </p>
-              <div class="badges">
-                <img
-                  class="badge"
-                  alt="GitHub release (latest by date)"
-                  src="https://img.shields.io/github/v/release/nekobato/torepe?label=version"
-                />
-                <img
-                  class="badge"
-                  alt="Desktop Application"
-                  src="https://img.shields.io/badge/Desktop_Application-868686"
-                />
-              </div>
-            </li>
-            <li>
-              <div class="title">
-                <a
-                  href="https://github.com/nekobato/polidium"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Polidium</a
-                >
-              </div>
-              <p class="description">
-                ながら見特化の透明なメディアプレイヤー + Webブラウザ
-              </p>
-              <div class="badges">
-                <img
-                  class="badge"
-                  alt="GitHub tag (latest by date)"
-                  src="https://img.shields.io/github/v/release/nekobato/polidium?label=version"
-                />
-                <img
-                  class="badge"
-                  alt="Desktop Application"
-                  src="https://img.shields.io/badge/Desktop_Application-868686"
-                />
-                <img
-                  class="badge"
-                  alt="macOS"
-                  src="https://img.shields.io/badge/macOS-868686?logo=apple"
-                />
-              </div>
-            </li>
-            <li>
-              <div class="title">
-                <a
-                  href="https://github.com/nekobato/davneko"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Davneko</a
-                >
-              </div>
-              <p class="description">個人用オーディオプレイヤーWeb</p>
-              <div class="badges">
-                <img
-                  class="badge"
-                  alt="GitHub release (latest by date)"
-                  src="https://img.shields.io/github/v/release/nekobato/davneko?label=version"
-                />
-                <img
-                  class="badge"
-                  alt="Web Application"
-                  src="https://img.shields.io/badge/Web_Application-868686"
-                />
-              </div>
-            </li>
-            <li>
-              <div class="title">
-                <a
-                  href="https://github.com/nekobato/davneko-desktop"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Davneko Desktop</a
-                >
-              </div>
-              <p class="description">Davnekoのデスクトップアプリケーション版</p>
-              <div class="badges">
-                <img
-                  class="badge"
-                  alt="GitHub release (latest by date)"
-                  src="https://img.shields.io/github/v/release/nekobato/davneko-desktop?label=version"
-                />
-                <img
-                  class="badge"
-                  alt="Desktop Application"
-                  src="https://img.shields.io/badge/Desktop_Application-868686"
-                />
-                <img
-                  class="badge"
-                  alt="macOS"
-                  src="https://img.shields.io/badge/macOS-868686?logo=apple"
-                />
-              </div>
-            </li>
-            <li>
-              <div class="title">
-                <a
-                  href="https://github.com/nekobato/BookCafe"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >BookCafe</a
-                >
-              </div>
-              <p class="description">個人用画像ビューアー</p>
-              <div class="badges">
-                <img
-                  class="badge"
-                  alt="GitHub release (latest by date)"
-                  src="https://img.shields.io/github/v/release/nekobato/bookcafe?label=version"
-                />
-                <img
-                  class="badge"
-                  alt="Web Application"
-                  src="https://img.shields.io/badge/Web_Application-868686"
-                />
-              </div>
-            </li>
-            <li>
-              <div class="title">
-                <a
-                  href="https://github.com/nekobato/GyazzAC"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >GyazzA(C)</a
-                >
-              </div>
-              <p class="description">
-                Gyazzのページをカッコいいスライドに変換して表示するブックマークレット
-              </p>
-              <div class="badges">
-                <img
-                  class="badge"
-                  alt="not maintenanced"
-                  src="https://img.shields.io/maintenance/no/2016"
-                />
-                <img
-                  class="badge"
-                  alt="Bookmarklet"
-                  src="https://img.shields.io/badge/Bookmarklet-868686"
-                />
-              </div>
-            </li>
-            <li>
-              <div class="title">
-                <a
-                  href="https://github.com/nekobato/Endnanonna"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Endnanonna</a
-                >
-              </div>
-              <p class="description">のんのんびよりタイトルGIFメーカー</p>
-              <div class="badges">
-                <img
-                  class="badge"
-                  alt="not maintenanced"
-                  src="https://img.shields.io/maintenance/no/2019"
-                />
-                <img
-                  class="badge"
-                  alt="Web Application"
-                  src="https://img.shields.io/badge/Web_Application-868686"
-                />
-              </div>
-            </li>
+            <% }) %>
           </ul>
         </div>
       </section>
@@ -431,125 +142,35 @@
         <h2>つくったコンポーネント</h2>
         <div class="app">
           <ul>
+            <% portfolio.components.forEach(item => { %>
             <li>
               <div class="title">
                 <a
-                  href="https://github.com/nekobato/nn-audio-visualizer"
+                  href="<%= item.url %>"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >nn-audio-visualizer</a
+                  ><%= item.title %></a
                 >
               </div>
               <div class="badges">
+                <% item.badges.forEach(badge => { %>
                 <img
                   class="badge"
-                  alt="npm version"
-                  src="https://badge.fury.io/js/%40nekobato%2Fnn-audio-visualizer.svg"
+                  alt="<%= badge.alt %>"
+                  src="<%= badge.src %>"
                 />
-                <img
-                  class="badge"
-                  alt="Web Component"
-                  src="https://img.shields.io/badge/Web_Component-868686"
-                />
+                <% }) %>
               </div>
             </li>
-            <li>
-              <div class="title">
-                <a
-                  href="https://github.com/nekobato/nn-kiai-button"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >nn-kiai-button</a
-                >
-              </div>
-              <div class="badges">
-                <img
-                  class="badge"
-                  alt="npm version"
-                  src="https://badge.fury.io/js/%40nekobato%2Fnn-kiai-button.svg"
-                />
-                <img
-                  class="badge"
-                  alt="Web Component"
-                  src="https://img.shields.io/badge/Web_Component-868686"
-                />
-              </div>
-            </li>
-            <li>
-              <div class="title">
-                <a
-                  href="https://github.com/nekobato/nn-damage-gauge"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >nn-damage-gauge</a
-                >
-              </div>
-              <div class="badges">
-                <img
-                  class="badge"
-                  alt="npm version"
-                  src="https://badge.fury.io/js/%40nekobato%2Fnn-damage-gauge.svg"
-                />
-                <img
-                  class="badge"
-                  alt="Web Component"
-                  src="https://img.shields.io/badge/Web_Component-868686"
-                />
-              </div>
-            </li>
-            <li>
-              <div class="title">
-                <a
-                  href="https://github.com/nekobato/nn-round-range"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >nn-round-range</a
-                >
-              </div>
-              <div class="badges">
-                <img
-                  class="badge"
-                  alt="npm version"
-                  src="https://badge.fury.io/js/%40nekobato%2Fnn-round-range.svg"
-                />
-                <img
-                  class="badge"
-                  alt="Web Component"
-                  src="https://img.shields.io/badge/Web_Component-868686"
-                />
-              </div>
-            </li>
-            <li>
-              <div class="title">
-                <a
-                  href="https://github.com/nekobato/nn-monachat-comment"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >nn-monachat-comment</a
-                >
-              </div>
-              <div class="badges">
-                <img
-                  class="badge"
-                  alt="npm version"
-                  src="https://badge.fury.io/js/%40nekobato%2Fnn-monachat-comment.svg"
-                />
-                <img
-                  class="badge"
-                  alt="Web Component"
-                  src="https://img.shields.io/badge/Web_Component-868686"
-                />
-              </div>
-            </li>
+            <% }) %>
           </ul>
         </div>
       </section>
 
       <details class="social-details">
         <summary class="social-summary">
-          <hr />
-          <div>
-            <span>経歴</span>
+          <div class="summary-content">
+            <span class="summary-text">経歴</span>
             <img class="chevron down" src="icons/chevron-down.svg" />
             <img class="chevron up" src="icons/chevron-up.svg" />
           </div>
@@ -558,94 +179,21 @@
         <section class="activities">
           <h2>活動履歴</h2>
           <dl>
-            <dt>2022-07-20 PWA Night vol.41 ～Design〜</dt>
+            <% activities.forEach(activity => { %>
+            <dt><%= activity.term %></dt>
             <dd>
+              <% if (activity.url) { %>
               <a
-                href="https://docs.google.com/presentation/d/1RGMV6-bVkfdTUDbWkTr1XHqCY-_-sdR8umG5r47OOBE/edit#slide=id.g13e7dc8e0dd_1_462"
+                href="<%= activity.url %>"
                 target="_blank"
                 rel="noopener noreferrer"
-                >メルカリDesign Systemの実装と責務</a
+                ><%= activity.title %></a
               >
+              <% } else { %>
+              <%= activity.title %>
+              <% } %>
             </dd>
-            <dt>2019-07-26 Gotanda.js #12 in ZEALS</dt>
-            <dd>
-              <a
-                href="https://speakerdeck.com/nekobato/migration-to-browserwindow-in-electron"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Migrating to BrowserView in Electron</a
-              >
-            </dd>
-            <dt>2019-07-03 Mercari x Merpay Frontend Tech Talk vol.2</dt>
-            <dd>
-              <a
-                href="https://speakerdeck.com/nekobato/building-frontend-development-environment-and-web-performance-monitoring"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Building frontend development environment and web performance
-                monitoring</a
-              >
-            </dd>
-            <dt>2019-02-07 Meguro.es #19 @ oRo</dt>
-            <dd>
-              <a
-                href="https://scrapbox.io/nekobatoken/Meguro.es_%2319_-_%E3%81%8A%E3%81%84%E3%81%A7%E3%82%88Denoland"
-                target="_blank"
-                rel="noopener noreferrer"
-                >おいでよdenoland</a
-              >
-            </dd>
-            <dt>2016-12-02 Gotanda.js #6 in Oisix</dt>
-            <dd>
-              <a
-                href="https://speakerdeck.com/nekobato/electronnian-bao"
-                target="_blank"
-                rel="noopener noreferrer"
-                >最近のElectronの話 (仮)</a
-              >
-            </dd>
-            <dt>2018-09-20 Meguro.css #3 @ oRo</dt>
-            <dd>
-              <a
-                href="https://speakerdeck.com/nekobato/mobile-animation-tuning"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Mobile animation tuning</a
-              >
-            </dd>
-            <dt>2018-05-29 Roppongi.js #3@ウォンテッドリー</dt>
-            <dd>
-              <a
-                href="https://speakerdeck.com/nekobato/p2p-netfwork-with-node-dot-js"
-                target="_blank"
-                rel="noopener noreferrer"
-                >P2P Netfwork with Node.js</a
-              >
-            </dd>
-            <dt>2016-09-02 Gotanda.js #5 in TORETA</dt>
-            <dd>
-              <a
-                href="https://www.slideshare.net/hayatokoriyama7/vuejs-012-to-200-gotandajs-5-65623849"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Vue.js 0.12から2.0.0への移行</a
-              >
-            </dd>
-            <dt>2016-01-08 Gotanda.js #2 〜JS新年会〜 in Gaiax</dt>
-            <dd>
-              <a
-                href="https://www.slideshare.net/hayatokoriyama7/electron-56820071"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Electronで動画ながら見アプリを作った話</a
-              >
-            </dd>
-            <dt>2015-10-28 Gotanda.js #1 in Mobile Factory</dt>
-            <dd>webpackとcomponent時代のfile structure</dd>
-            <dt>2004-06-19 Online</dt>
-            <dd>Flash・動画文芸祭</dd>
-            <dt>2004-12-31 Online</dt>
-            <dd>紅白Flash合戦</dd>
+            <% }) %>
           </dl>
         </section>
 

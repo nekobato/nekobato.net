@@ -1,0 +1,108 @@
+[
+  {
+    "company": "株式会社モバイルファクトリー",
+    "role": "Webフロントエンドエンジニア",
+    "startDate": "2015-04",
+    "endDate": "2018-06",
+    "projects": [
+      {
+        "name": "モバイル位置ゲームのフロントエンド設計・開発",
+        "startDate": "2015-04",
+        "endDate": "2017-12",
+        "highlights": [
+          "Web技術によるスマートフォンゲーム開発",
+          "Adobe XDを使った画面管理"
+        ]
+      },
+      {
+        "name": "ブロックチェーン新規開発",
+        "startDate": "2018-01",
+        "endDate": "2018-06",
+        "highlights": [
+          "Solidityを使ったスマートコントラクト開発",
+          "Node.jsを使ったブロックチェーン基盤開発"
+        ]
+      }
+    ]
+  },
+  {
+    "company": "株式会社メルカリ",
+    "role": "Webフロントエンドエンジニア",
+    "startDate": "2018-07",
+    "endDate": "2018-12",
+    "projects": [
+      {
+        "name": "管理画面開発運用",
+        "startDate": "2018-07",
+        "endDate": "2018-12",
+        "highlights": [
+          "管理画面の新規機能開発",
+          "レガシーコードリファクタリング"
+        ]
+      },
+      {
+        "name": "サービスリニューアルにおけるDevOps",
+        "startDate": "2019-01",
+        "endDate": "2019-09",
+        "highlights": [
+          "サーバーおよびエラー監視の構築",
+          "Web版周辺のサーバー負荷検証とリファクタリング"
+        ]
+      },
+      {
+        "name": "Design System Web",
+        "startDate": "2019-10",
+        "endDate": "2019-12",
+        "highlights": [
+          "Design System Webの開発"
+        ]
+      }
+    ]
+  },
+  {
+    "company": "株式会社メルペイ",
+    "role": "Webフロントエンドエンジニア",
+    "startDate": "2020-01",
+    "endDate": "2020-09",
+    "projects": [
+      {
+        "name": "Design System Web",
+        "startDate": "2020-01",
+        "endDate": "2020-09",
+        "highlights": [
+          "Design System Webの開発"
+        ]
+      }
+    ]
+  },
+  {
+    "company": "株式会社メルカリ",
+    "role": "Webフロントエンドエンジニア",
+    "startDate": "2020-10",
+    "endDate": "2022-07",
+    "projects": [
+      {
+        "name": "Design System Web",
+        "startDate": "2020-10",
+        "endDate": "2022-07",
+        "highlights": [
+          "Design System Webの開発・運用"
+        ]
+      }
+    ]
+  },
+  {
+    "company": "株式会社RABO",
+    "role": "Webフロントエンドエンジニア",
+    "startDate": "2023-01",
+    "endDate": "",
+    "projects": [
+      {
+        "name": "Catlog Web",
+        "startDate": "2023-01",
+        "endDate": "",
+        "highlights": []
+      }
+    ]
+  }
+]

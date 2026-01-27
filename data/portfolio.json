@@ -1,0 +1,261 @@
+{
+  "works": [
+    {
+      "title": "Solitaire",
+      "url": "https://github.com/nekobato/solitaire",
+      "description": "TUIで動作するソリティアゲーム",
+      "badges": [
+        {
+          "alt": "npm version",
+          "src": "https://img.shields.io/npm/v/%40nekobato%2Fsolitaire"
+        },
+        {
+          "alt": "CLI Application",
+          "src": "https://img.shields.io/badge/CLI-868686"
+        }
+      ]
+    },
+    {
+      "title": "DotE",
+      "url": "https://github.com/nekobato/DotE",
+      "description": "ながら見特化のスリムなFediverseクライアント",
+      "badges": [
+        {
+          "alt": "GitHub tag (latest by date)",
+          "src": "https://img.shields.io/github/v/release/nekobato/DotE?label=version"
+        },
+        {
+          "alt": "Desktop Application",
+          "src": "https://img.shields.io/badge/Desktop_Application-868686"
+        },
+        {
+          "alt": "macOS",
+          "src": "https://img.shields.io/badge/macOS-868686?logo=apple"
+        },
+        {
+          "alt": "Windows",
+          "src": "https://img.shields.io/badge/Windows-868686?logo=windows"
+        }
+      ]
+    },
+    {
+      "title": "RoundDrop",
+      "url": "https://github.com/nekobato/RoundDrop",
+      "description": "コマンドサークル型アプリケーションランチャー",
+      "badges": [
+        {
+          "alt": "GitHub tag (latest by date)",
+          "src": "https://img.shields.io/github/v/release/nekobato/RoundDrop?label=version"
+        },
+        {
+          "alt": "Desktop Application",
+          "src": "https://img.shields.io/badge/Desktop_Application-868686"
+        },
+        {
+          "alt": "macOS",
+          "src": "https://img.shields.io/badge/macOS-868686?logo=apple"
+        }
+      ]
+    },
+    {
+      "title": "ScrapLinker",
+      "url": "https://github.com/nekobato/scraplinker",
+      "descriptionHtml": "開いているページのURLとタイトルを <a href=\"https://cosen.se\">Cosense</a> のリンク形式にするChromeエクステンション",
+      "badges": [
+        {
+          "alt": "GitHub release (latest by date)",
+          "src": "https://img.shields.io/github/v/release/nekobato/scraplinker?label=version"
+        },
+        {
+          "alt": "Chrome Extension",
+          "src": "https://img.shields.io/badge/Chrome_Extension-868686"
+        }
+      ]
+    },
+    {
+      "title": "Torepe",
+      "url": "https://github.com/nekobato/Torepe",
+      "description": "画像と実装を重ねて比較するための画像ビューアー",
+      "badges": [
+        {
+          "alt": "GitHub release (latest by date)",
+          "src": "https://img.shields.io/github/v/release/nekobato/torepe?label=version"
+        },
+        {
+          "alt": "Desktop Application",
+          "src": "https://img.shields.io/badge/Desktop_Application-868686"
+        }
+      ]
+    },
+    {
+      "title": "Polidium",
+      "url": "https://github.com/nekobato/polidium",
+      "description": "ながら見特化の透明なメディアプレイヤー + Webブラウザ",
+      "badges": [
+        {
+          "alt": "GitHub tag (latest by date)",
+          "src": "https://img.shields.io/github/v/release/nekobato/polidium?label=version"
+        },
+        {
+          "alt": "Desktop Application",
+          "src": "https://img.shields.io/badge/Desktop_Application-868686"
+        },
+        {
+          "alt": "macOS",
+          "src": "https://img.shields.io/badge/macOS-868686?logo=apple"
+        }
+      ]
+    },
+    {
+      "title": "Davneko",
+      "url": "https://github.com/nekobato/davneko",
+      "description": "個人用オーディオプレイヤーWeb",
+      "badges": [
+        {
+          "alt": "GitHub release (latest by date)",
+          "src": "https://img.shields.io/github/v/release/nekobato/davneko?label=version"
+        },
+        {
+          "alt": "Web Application",
+          "src": "https://img.shields.io/badge/Web_Application-868686"
+        }
+      ]
+    },
+    {
+      "title": "Davneko Desktop",
+      "url": "https://github.com/nekobato/davneko-desktop",
+      "description": "Davnekoのデスクトップアプリケーション版",
+      "badges": [
+        {
+          "alt": "GitHub release (latest by date)",
+          "src": "https://img.shields.io/github/v/release/nekobato/davneko-desktop?label=version"
+        },
+        {
+          "alt": "Desktop Application",
+          "src": "https://img.shields.io/badge/Desktop_Application-868686"
+        },
+        {
+          "alt": "macOS",
+          "src": "https://img.shields.io/badge/macOS-868686?logo=apple"
+        }
+      ]
+    },
+    {
+      "title": "BookCafe",
+      "url": "https://github.com/nekobato/BookCafe",
+      "description": "個人用画像ビューアー",
+      "badges": [
+        {
+          "alt": "GitHub release (latest by date)",
+          "src": "https://img.shields.io/github/v/release/nekobato/bookcafe?label=version"
+        },
+        {
+          "alt": "Web Application",
+          "src": "https://img.shields.io/badge/Web_Application-868686"
+        }
+      ]
+    },
+    {
+      "title": "GyazzA(C)",
+      "url": "https://github.com/nekobato/GyazzAC",
+      "description": "Gyazzのページをカッコいいスライドに変換して表示するブックマークレット",
+      "badges": [
+        {
+          "alt": "not maintenanced",
+          "src": "https://img.shields.io/maintenance/no/2016"
+        },
+        {
+          "alt": "Bookmarklet",
+          "src": "https://img.shields.io/badge/Bookmarklet-868686"
+        }
+      ]
+    },
+    {
+      "title": "Endnanonna",
+      "url": "https://github.com/nekobato/Endnanonna",
+      "description": "のんのんびよりタイトルGIFメーカー",
+      "badges": [
+        {
+          "alt": "not maintenanced",
+          "src": "https://img.shields.io/maintenance/no/2019"
+        },
+        {
+          "alt": "Web Application",
+          "src": "https://img.shields.io/badge/Web_Application-868686"
+        }
+      ]
+    }
+  ],
+  "components": [
+    {
+      "title": "nn-audio-visualizer",
+      "url": "https://github.com/nekobato/nn-audio-visualizer",
+      "badges": [
+        {
+          "alt": "npm version",
+          "src": "https://badge.fury.io/js/%40nekobato%2Fnn-audio-visualizer.svg"
+        },
+        {
+          "alt": "Web Component",
+          "src": "https://img.shields.io/badge/Web_Component-868686"
+        }
+      ]
+    },
+    {
+      "title": "nn-kiai-button",
+      "url": "https://github.com/nekobato/nn-kiai-button",
+      "badges": [
+        {
+          "alt": "npm version",
+          "src": "https://badge.fury.io/js/%40nekobato%2Fnn-kiai-button.svg"
+        },
+        {
+          "alt": "Web Component",
+          "src": "https://img.shields.io/badge/Web_Component-868686"
+        }
+      ]
+    },
+    {
+      "title": "nn-damage-gauge",
+      "url": "https://github.com/nekobato/nn-damage-gauge",
+      "badges": [
+        {
+          "alt": "npm version",
+          "src": "https://badge.fury.io/js/%40nekobato%2Fnn-damage-gauge.svg"
+        },
+        {
+          "alt": "Web Component",
+          "src": "https://img.shields.io/badge/Web_Component-868686"
+        }
+      ]
+    },
+    {
+      "title": "nn-round-range",
+      "url": "https://github.com/nekobato/nn-round-range",
+      "badges": [
+        {
+          "alt": "npm version",
+          "src": "https://badge.fury.io/js/%40nekobato%2Fnn-round-range.svg"
+        },
+        {
+          "alt": "Web Component",
+          "src": "https://img.shields.io/badge/Web_Component-868686"
+        }
+      ]
+    },
+    {
+      "title": "nn-monachat-comment",
+      "url": "https://github.com/nekobato/nn-monachat-comment",
+      "badges": [
+        {
+          "alt": "npm version",
+          "src": "https://badge.fury.io/js/%40nekobato%2Fnn-monachat-comment.svg"
+        },
+        {
+          "alt": "Web Component",
+          "src": "https://img.shields.io/badge/Web_Component-868686"
+        }
+      ]
+    }
+  ]
+}
