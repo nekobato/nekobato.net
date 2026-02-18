@@ -23,7 +23,7 @@
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20251213.0",
     "dayjs": "^1.11.19",
-    "sass": "^1.96.0",
+    "sass-embedded": "^1.97.3",
     "typescript": "^5.9.3",
     "vite": "^7.2.7",
     "vite-plugin-ejs": "^1.7.0",
