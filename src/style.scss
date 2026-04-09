@@ -37,7 +37,27 @@ body {
   background: var(--color-teal-100);
 }
 
+#dummy-content,
+main,
+footer {
+  z-index: 1;
+}
+
+#dummy-content {
+  position: relative;
+}
+
+#bg-animation {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+}
+
 main {
+  position: relative;
   margin: auto;
   padding: 0 16px 32px;
   width: 320px;
@@ -214,6 +234,7 @@ footer {
   position: fixed;
   right: 8px;
   bottom: 8px;
+  z-index: 1;
   font-family: PixelMplus12;
   color: var(--color-grey-500);
 
