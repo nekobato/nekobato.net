@@ -59,7 +59,7 @@ footer {
 main {
   position: relative;
   margin: auto;
-  padding: 0 16px 32px;
+  padding: 0 0 32px;
   width: 320px;
   height: 560px;
   border: 1px solid var(--color-grey-100);
@@ -78,17 +78,29 @@ main::-webkit-scrollbar {
 }
 
 header {
-  padding: 0 0 32px;
+  padding: 16px;
+  border-bottom: 1px solid var(--color-black);
+
   h1 {
-    padding: 16px 0 0 0;
     text-align: left;
     font-size: 24px;
     font-weight: bold;
+    line-height: 1;
+  }
+
+  p {
+    font-size: 12px;
+    margin-top: 2px;
+    line-height: 1;
   }
 }
 
 section {
-  padding: 16px 0;
+  padding: 16px 16px 32px;
+}
+
+main > section {
+  border-bottom: 1px solid var(--color-black);
 }
 
 section.about {
@@ -106,7 +118,7 @@ section.portfolio {
 }
 
 h2 {
-  margin: 24px 0;
+  margin: 0;
 }
 
 dl {
@@ -183,12 +195,12 @@ dl {
 .links,
 .app {
   ul {
+    margin-top: 16px;
     padding: 0 0 0 8px;
     list-style-type: square;
     li {
       position: relative;
       list-style: none;
-      margin: 24px 0 0 0;
       font-size: 16px;
       font-weight: bold;
       &::before {
@@ -226,6 +238,138 @@ dl {
   }
 }
 
+.links {
+  ul {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  li {
+    margin: 0;
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.link-button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 2px solid var(--color-black);
+  border-radius: 6px;
+  background: var(--color-blue-100);
+  box-shadow: 3px 3px 0 var(--color-black);
+  color: var(--color-teal-700);
+  text-decoration: none;
+  transition:
+    transform 120ms ease-out,
+    box-shadow 120ms ease-out,
+    background-color 120ms ease-out,
+    color 120ms ease-out;
+
+  &:link,
+  &:visited {
+    color: var(--color-teal-700);
+  }
+
+  &::after {
+    content: ">";
+    margin-left: auto;
+    font-size: 12px;
+    line-height: 1;
+  }
+
+  &:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0 var(--color-black);
+    background: var(--color-teal-100);
+    color: var(--color-teal-700);
+  }
+
+  &:active {
+    transform: translate(3px, 3px);
+    box-shadow: 0 0 0 var(--color-black);
+    background: var(--color-blue-200);
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--color-blue-300);
+    outline-offset: 2px;
+  }
+}
+
+.card-list {
+  padding: 0;
+  display: grid;
+  gap: 12px;
+  list-style: none;
+
+  > li {
+    margin: 0;
+
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.neubrutalism-card {
+  --neubrutalism-card-bg: var(--color-teal-50);
+
+  padding: 12px;
+  border: 2px solid var(--color-black);
+  border-radius: 6px;
+  background: var(--neubrutalism-card-bg);
+  box-shadow: 3px 3px 0 var(--color-black);
+
+  .title {
+    margin-bottom: 0;
+    line-height: 1.25;
+  }
+
+  .title a {
+    display: inline-block;
+    color: var(--color-teal-700);
+    text-decoration-color: var(--color-blue-200);
+
+    &:link,
+    &:visited {
+      color: var(--color-teal-700);
+    }
+
+    &:hover {
+      color: var(--color-blue-700);
+      text-decoration-color: var(--color-blue-300);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-blue-300);
+      outline-offset: 2px;
+    }
+  }
+
+  p.description {
+    margin: 10px 0 0;
+    font-weight: normal;
+    color: var(--color-grey-700);
+  }
+
+  .badges {
+    margin-top: 10px;
+  }
+}
+
+section.portfolio.component {
+  .neubrutalism-card {
+    --neubrutalism-card-bg: var(--color-blue-50);
+  }
+}
+
 p {
   line-height: 24px;
 }
@@ -244,6 +388,8 @@ footer {
 }
 
 .social-details {
+  padding: 0 16px;
+
   &[open] {
     .social-summary {
       .chevron.down {
@@ -324,12 +470,11 @@ footer {
   }
 }
 
-.glassmorphism {
-  /* From https://css.glass */
-  background: var(--color-white-t400);
-  border-radius: 16px;
-  box-shadow: 0 4px 32px var(--color-black-t50);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border: 1px solid var(--color-white-t300);
+.neubrutalism {
+  background: var(--color-teal-50);
+  border: 3px solid var(--color-grey-700);
+  border-radius: 12px;
+  box-shadow: 6px 6px 0 var(--color-grey-700);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }

@@ -63,7 +63,7 @@
   <body class="loading">
     <div id="dummy-content" class="dummy-content"></div>
     <canvas id="bg-animation" aria-hidden="true"></canvas>
-    <main id="main" class="glassmorphism">
+    <main id="main" class="neubrutalism">
       <header>
         <h1>nekobato.net</h1>
         <p>インターフェースとか</p>
@@ -93,6 +93,7 @@
           <% const isExternal = link.href.startsWith("http"); %>
           <li>
             <a
+              class="link-button"
               href="<%= link.href %>"
               <% if (isExternal) { %>target="_blank" rel="noopener noreferrer"<% } %>
               ><%= link.label %></a
@@ -104,9 +105,9 @@
       <section class="portfolio">
         <h2>つくったもの</h2>
         <div class="app">
-          <ul>
+          <ul class="card-list">
             <% portfolio.works.forEach(item => { %>
-            <li>
+            <li class="neubrutalism-card">
               <div class="title">
                 <a
                   href="<%= item.url %>"
@@ -142,9 +143,9 @@
       <section class="portfolio component">
         <h2>つくったコンポーネント</h2>
         <div class="app">
-          <ul>
+          <ul class="card-list">
             <% portfolio.components.forEach(item => { %>
-            <li>
+            <li class="neubrutalism-card">
               <div class="title">
                 <a
                   href="<%= item.url %>"

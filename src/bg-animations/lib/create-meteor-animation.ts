@@ -17,6 +17,9 @@ type Meteor = {
   opacity: number;
   glow: number;
   delayMs: number;
+  trailMidColor: string;
+  shadowColor: string;
+  headColor: string;
 };
 
 type MeteorAnimationConfig = {
@@ -33,6 +36,8 @@ type MeteorAnimationConfig = {
   glowRange: NumericRange;
   trailColor: RgbColor;
   headColor: RgbColor;
+  maxDevicePixelRatio?: number;
+  maxFramesPerSecond?: number;
 };
 
 /**
@@ -59,12 +64,13 @@ const toRgba = (color: RgbColor, alpha: number): string =>
 const resizeCanvas = (
   canvas: HTMLCanvasElement,
   context: CanvasRenderingContext2D,
+  maximumDevicePixelRatio: number,
 ): { width: number; height: number } => {
   const width = window.innerWidth;
   const height = window.innerHeight;
   const devicePixelRatio = Math.min(
     window.devicePixelRatio || 1,
-    MAX_DEVICE_PIXEL_RATIO,
+    maximumDevicePixelRatio,
   );
 
   canvas.width = Math.floor(width * devicePixelRatio);
@@ -97,8 +103,17 @@ export const createMeteorAnimation = (
     const trajectorySine = Math.sin(trajectoryAngleRadians);
     const [minimumBaseCount, maximumBaseCount] =
       config.baseCountRange ?? DEFAULT_BASE_COUNT_RANGE;
+    const maximumDevicePixelRatio = Math.min(
+      config.maxDevicePixelRatio ?? MAX_DEVICE_PIXEL_RATIO,
+      MAX_DEVICE_PIXEL_RATIO,
+    );
+    const minimumFrameIntervalMs =
+      config.maxFramesPerSecond && config.maxFramesPerSecond > 0
+        ? 1000 / config.maxFramesPerSecond
+        : 0;
     const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
     const abortController = new AbortController();
+    const transparentTrailColor = toRgba(config.trailColor, 0);
 
     /**
      * Calculates a meteor count that scales with the viewport area.
@@ -165,11 +180,24 @@ export const createMeteorAnimation = (
           opacity: randomBetween(...config.opacityRange),
           glow: randomBetween(...config.glowRange),
           delayMs: 0,
+          trailMidColor: "",
+          shadowColor: "",
+          headColor: "",
         },
         viewportWidth,
         viewportHeight,
         phase,
       );
+
+    /**
+     * Assigns color strings that remain stable for the lifetime of a meteor.
+     */
+    const initializeMeteorAppearance = (meteor: Meteor): Meteor => {
+      meteor.trailMidColor = toRgba(config.trailColor, meteor.opacity * 0.35);
+      meteor.shadowColor = toRgba(config.trailColor, meteor.opacity * 0.55);
+      meteor.headColor = toRgba(config.headColor, meteor.opacity);
+      return meteor;
+    };
 
     /**
      * Builds the meteor field for the current viewport.
@@ -179,8 +207,34 @@ export const createMeteorAnimation = (
       viewportHeight: number,
     ): Meteor[] =>
       Array.from({ length: getMeteorCount(viewportWidth, viewportHeight) }, () =>
-        createMeteor(viewportWidth, viewportHeight, "initial"),
+        initializeMeteorAppearance(
+          createMeteor(viewportWidth, viewportHeight, "initial"),
+        ),
       );
+
+    /**
+     * Returns false when the meteor segment is fully outside the viewport.
+     */
+    const isMeteorVisible = (
+      meteor: Meteor,
+      viewportWidth: number,
+      viewportHeight: number,
+    ): boolean => {
+      const tailX = meteor.x - trajectoryCosine * meteor.length;
+      const tailY = meteor.y - trajectorySine * meteor.length;
+      const padding = meteor.glow + meteor.thickness * 2;
+      const minimumX = Math.min(meteor.x, tailX);
+      const maximumX = Math.max(meteor.x, tailX);
+      const minimumY = Math.min(meteor.y, tailY);
+      const maximumY = Math.max(meteor.y, tailY);
+
+      return !(
+        maximumX < -padding ||
+        minimumX > viewportWidth + padding ||
+        maximumY < -padding ||
+        minimumY > viewportHeight + padding
+      );
+    };
 
     /**
      * Advances a meteor and respawns it after it leaves the viewport.
@@ -232,28 +286,19 @@ export const createMeteorAnimation = (
         meteor.y,
       );
 
-      gradient.addColorStop(0, toRgba(config.trailColor, 0));
-      gradient.addColorStop(
-        0.55,
-        toRgba(config.trailColor, meteor.opacity * 0.35),
-      );
-      gradient.addColorStop(1, toRgba(config.headColor, meteor.opacity));
+      gradient.addColorStop(0, transparentTrailColor);
+      gradient.addColorStop(0.55, meteor.trailMidColor);
+      gradient.addColorStop(1, meteor.headColor);
 
-      drawingContext.save();
-      drawingContext.globalCompositeOperation = "lighter";
-      drawingContext.lineCap = "round";
       drawingContext.strokeStyle = gradient;
       drawingContext.lineWidth = meteor.thickness;
-      drawingContext.shadowColor = toRgba(
-        config.trailColor,
-        meteor.opacity * 0.55,
-      );
+      drawingContext.shadowColor = meteor.shadowColor;
       drawingContext.shadowBlur = meteor.glow;
       drawingContext.beginPath();
       drawingContext.moveTo(tailX, tailY);
       drawingContext.lineTo(meteor.x, meteor.y);
       drawingContext.stroke();
-      drawingContext.fillStyle = toRgba(config.headColor, meteor.opacity);
+      drawingContext.fillStyle = meteor.headColor;
       drawingContext.beginPath();
       drawingContext.arc(
         meteor.x,
@@ -263,10 +308,9 @@ export const createMeteorAnimation = (
         Math.PI * 2,
       );
       drawingContext.fill();
-      drawingContext.restore();
     };
 
-    let viewport = resizeCanvas(canvas, context);
+    let viewport = resizeCanvas(canvas, context, maximumDevicePixelRatio);
     let meteors = createMeteorField(viewport.width, viewport.height);
     let animationFrameId = 0;
     let lastFrameTimestamp = 0;
@@ -276,14 +320,23 @@ export const createMeteorAnimation = (
      */
     const renderScene = (deltaSeconds: number): void => {
       context.clearRect(0, 0, viewport.width, viewport.height);
+      context.globalCompositeOperation = "lighter";
+      context.lineCap = "round";
 
-      meteors.forEach((meteor) => {
+      for (const meteor of meteors) {
         if (deltaSeconds > 0) {
           updateMeteor(meteor, deltaSeconds, viewport.width, viewport.height);
         }
 
+        if (!isMeteorVisible(meteor, viewport.width, viewport.height)) {
+          continue;
+        }
+
         drawMeteor(context, meteor);
-      });
+      }
+
+      context.shadowBlur = 0;
+      context.globalCompositeOperation = "source-over";
     };
 
     /**
@@ -306,8 +359,15 @@ export const createMeteorAnimation = (
         lastFrameTimestamp = timestamp;
       }
 
+      const elapsedMilliseconds = timestamp - lastFrameTimestamp;
+
+      if (minimumFrameIntervalMs > 0 && elapsedMilliseconds < minimumFrameIntervalMs) {
+        animationFrameId = requestAnimationFrame(tick);
+        return;
+      }
+
       const deltaSeconds = Math.min(
-        (timestamp - lastFrameTimestamp) / 1000,
+        elapsedMilliseconds / 1000,
         0.05,
       );
       lastFrameTimestamp = timestamp;
@@ -336,7 +396,7 @@ export const createMeteorAnimation = (
      * Recreates the meteor field to fit the latest viewport.
      */
     const handleResize = (): void => {
-      viewport = resizeCanvas(canvas, context);
+      viewport = resizeCanvas(canvas, context, maximumDevicePixelRatio);
       meteors = createMeteorField(viewport.width, viewport.height);
       renderScene(0);
       startLoop();

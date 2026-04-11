@@ -1,6 +1,8 @@
 import type { BackgroundAnimation } from "./lib/types";
 
-const MAX_DEVICE_PIXEL_RATIO = 2;
+const MAX_DEVICE_PIXEL_RATIO = 1.5;
+const MAX_FRAMES_PER_SECOND = 30;
+const MINIMUM_FRAME_INTERVAL_MS = 1000 / MAX_FRAMES_PER_SECOND;
 const SWEEP_HEIGHT = 160;
 
 type NoiseParticle = {
@@ -90,15 +92,11 @@ const drawScanlines = (
 ): void => {
   const lineSpacing = 4;
 
-  context.save();
-
   for (let y = 0; y <= viewportHeight + lineSpacing; y += lineSpacing) {
     const alpha = 0.045 + 0.018 * Math.sin(y * 0.08 + timeSeconds * 1.4);
     context.fillStyle = `rgba(173, 226, 255, ${clamp(alpha, 0.02, 0.08)})`;
     context.fillRect(0, y, viewportWidth, 1);
   }
-
-  context.restore();
 };
 
 /**
@@ -125,11 +123,9 @@ const drawSweep = (
   gradient.addColorStop(0.55, "rgba(180, 236, 255, 0.012)");
   gradient.addColorStop(1, "rgba(180, 236, 255, 0)");
 
-  context.save();
   context.globalCompositeOperation = "screen";
   context.fillStyle = gradient;
   context.fillRect(0, sweepY - SWEEP_HEIGHT / 2, viewportWidth, SWEEP_HEIGHT);
-  context.restore();
 };
 
 /**
@@ -140,27 +136,24 @@ const drawNoise = (
   noiseField: NoiseParticle[],
   timeSeconds: number,
 ): void => {
-  context.save();
   context.globalCompositeOperation = "screen";
 
-  noiseField.forEach((particle) => {
+  for (const particle of noiseField) {
     const flicker =
       0.35 + 0.65 * ((Math.sin(timeSeconds * 3.2 + particle.phaseOffset) + 1) / 2);
     context.fillStyle = `rgba(223, 246, 255, ${particle.opacity * flicker})`;
     context.fillRect(particle.x, particle.y, particle.size, particle.size);
-  });
-
-  context.restore();
+  }
 };
 
 /**
- * Draws a soft vignette so the edges sit farther back behind the glass panel.
+ * Creates the vignette gradient for the current viewport.
  */
-const drawVignette = (
+const createVignetteGradient = (
   context: CanvasRenderingContext2D,
   viewportWidth: number,
   viewportHeight: number,
-): void => {
+): CanvasGradient => {
   const vignette = context.createRadialGradient(
     viewportWidth / 2,
     viewportHeight / 2,
@@ -173,10 +166,7 @@ const drawVignette = (
   vignette.addColorStop(0, "rgba(7, 16, 24, 0)");
   vignette.addColorStop(1, "rgba(5, 10, 17, 0.36)");
 
-  context.save();
-  context.fillStyle = vignette;
-  context.fillRect(0, 0, viewportWidth, viewportHeight);
-  context.restore();
+  return vignette;
 };
 
 /**
@@ -199,8 +189,14 @@ export const animation: BackgroundAnimation = {
 
     let viewport = resizeCanvas(canvas, context);
     let noiseField = createNoiseField(viewport.width, viewport.height);
+    let vignetteGradient = createVignetteGradient(
+      context,
+      viewport.width,
+      viewport.height,
+    );
     let animationFrameId = 0;
     let animationStartTimestamp = 0;
+    let lastFrameTimestamp = 0;
 
     /**
      * Paints the current frame and optionally advances the moving sweep.
@@ -211,10 +207,14 @@ export const animation: BackgroundAnimation = {
         : 0;
 
       context.clearRect(0, 0, viewport.width, viewport.height);
-      drawVignette(context, viewport.width, viewport.height);
+      context.globalCompositeOperation = "source-over";
+      context.fillStyle = vignetteGradient;
+      context.fillRect(0, 0, viewport.width, viewport.height);
       drawSweep(context, viewport.width, viewport.height, timeSeconds);
+      context.globalCompositeOperation = "source-over";
       drawScanlines(context, viewport.width, viewport.height, timeSeconds);
       drawNoise(context, noiseField, timeSeconds);
+      context.globalCompositeOperation = "source-over";
     };
 
     /**
@@ -237,6 +237,18 @@ export const animation: BackgroundAnimation = {
         animationStartTimestamp = timestamp;
       }
 
+      if (lastFrameTimestamp === 0) {
+        lastFrameTimestamp = timestamp;
+      }
+
+      const elapsedMilliseconds = timestamp - lastFrameTimestamp;
+
+      if (elapsedMilliseconds < MINIMUM_FRAME_INTERVAL_MS) {
+        animationFrameId = requestAnimationFrame(tick);
+        return;
+      }
+
+      lastFrameTimestamp = timestamp;
       renderScene(timestamp, true);
       animationFrameId = requestAnimationFrame(tick);
     };
@@ -255,6 +267,7 @@ export const animation: BackgroundAnimation = {
       }
 
       animationStartTimestamp = 0;
+      lastFrameTimestamp = 0;
       animationFrameId = requestAnimationFrame(tick);
     };
 
@@ -264,6 +277,11 @@ export const animation: BackgroundAnimation = {
     const handleResize = (): void => {
       viewport = resizeCanvas(canvas, context);
       noiseField = createNoiseField(viewport.width, viewport.height);
+      vignetteGradient = createVignetteGradient(
+        context,
+        viewport.width,
+        viewport.height,
+      );
       renderScene(0, false);
       startLoop();
     };

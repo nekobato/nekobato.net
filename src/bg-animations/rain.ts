@@ -1,16 +1,24 @@
 import type { BackgroundAnimation } from "./lib/types";
 
-const MAX_DEVICE_PIXEL_RATIO = 2;
+const MAX_DEVICE_PIXEL_RATIO = 1.5;
+const MAX_FRAMES_PER_SECOND = 36;
+const MINIMUM_FRAME_INTERVAL_MS = 1000 / MAX_FRAMES_PER_SECOND;
 const RAIN_ANGLE_RADIANS = (78 * Math.PI) / 180;
+const RAIN_TRAJECTORY_COSINE = Math.cos(RAIN_ANGLE_RADIANS);
+const RAIN_TRAJECTORY_SINE = Math.sin(RAIN_ANGLE_RADIANS);
 const OFFSCREEN_MARGIN = 64;
 
 type RainDrop = {
   x: number;
   y: number;
   speed: number;
+  velocityX: number;
+  velocityY: number;
   length: number;
   thickness: number;
   opacity: number;
+  trailMidColor: string;
+  headColor: string;
 };
 
 /**
@@ -30,6 +38,8 @@ const clamp = (value: number, min: number, max: number): number =>
  */
 const toRainColor = (alpha: number): string =>
   `rgba(230, 241, 255, ${clamp(alpha, 0, 1)})`;
+
+const TRANSPARENT_RAIN_COLOR = toRainColor(0);
 
 /**
  * Resizes the canvas to match the viewport and device pixel ratio.
@@ -87,20 +97,28 @@ const createDrop = (
   viewportWidth: number,
   viewportHeight: number,
   phase: "initial" | "respawn",
-): RainDrop =>
-  positionDrop(
+): RainDrop => {
+  const speed = randomBetween(620, 1120);
+  const opacity = randomBetween(0.16, 0.34);
+
+  return positionDrop(
     {
       x: 0,
       y: 0,
-      speed: randomBetween(620, 1120),
+      speed,
+      velocityX: RAIN_TRAJECTORY_COSINE * speed,
+      velocityY: RAIN_TRAJECTORY_SINE * speed,
       length: randomBetween(16, 42),
       thickness: randomBetween(0.7, 1.6),
-      opacity: randomBetween(0.16, 0.34),
+      opacity,
+      trailMidColor: toRainColor(opacity * 0.55),
+      headColor: toRainColor(opacity),
     },
     viewportWidth,
     viewportHeight,
     phase,
   );
+};
 
 /**
  * Builds the rain field for the current viewport.
@@ -122,11 +140,8 @@ const updateDrop = (
   viewportWidth: number,
   viewportHeight: number,
 ): void => {
-  const velocityX = Math.cos(RAIN_ANGLE_RADIANS) * drop.speed;
-  const velocityY = Math.sin(RAIN_ANGLE_RADIANS) * drop.speed;
-
-  drop.x += velocityX * deltaSeconds;
-  drop.y += velocityY * deltaSeconds;
+  drop.x += drop.velocityX * deltaSeconds;
+  drop.y += drop.velocityY * deltaSeconds;
 
   if (
     drop.x > viewportWidth + OFFSCREEN_MARGIN ||
@@ -137,19 +152,43 @@ const updateDrop = (
 };
 
 /**
+ * Returns false when the rain streak falls fully outside the viewport.
+ */
+const isDropVisible = (
+  drop: RainDrop,
+  viewportWidth: number,
+  viewportHeight: number,
+): boolean => {
+  const tailX = drop.x - RAIN_TRAJECTORY_COSINE * drop.length;
+  const tailY = drop.y - RAIN_TRAJECTORY_SINE * drop.length;
+  const padding = drop.thickness * 2;
+  const minimumX = Math.min(drop.x, tailX);
+  const maximumX = Math.max(drop.x, tailX);
+  const minimumY = Math.min(drop.y, tailY);
+  const maximumY = Math.max(drop.y, tailY);
+
+  return !(
+    maximumX < -padding ||
+    minimumX > viewportWidth + padding ||
+    maximumY < -padding ||
+    minimumY > viewportHeight + padding
+  );
+};
+
+/**
  * Draws a single rain streak.
  */
 const drawDrop = (
   context: CanvasRenderingContext2D,
   drop: RainDrop,
 ): void => {
-  const tailX = drop.x - Math.cos(RAIN_ANGLE_RADIANS) * drop.length;
-  const tailY = drop.y - Math.sin(RAIN_ANGLE_RADIANS) * drop.length;
+  const tailX = drop.x - RAIN_TRAJECTORY_COSINE * drop.length;
+  const tailY = drop.y - RAIN_TRAJECTORY_SINE * drop.length;
   const gradient = context.createLinearGradient(tailX, tailY, drop.x, drop.y);
 
-  gradient.addColorStop(0, toRainColor(0));
-  gradient.addColorStop(0.65, toRainColor(drop.opacity * 0.55));
-  gradient.addColorStop(1, toRainColor(drop.opacity));
+  gradient.addColorStop(0, TRANSPARENT_RAIN_COLOR);
+  gradient.addColorStop(0.65, drop.trailMidColor);
+  gradient.addColorStop(1, drop.headColor);
 
   context.beginPath();
   context.strokeStyle = gradient;
@@ -188,18 +227,22 @@ export const animation: BackgroundAnimation = {
      */
     const renderScene = (deltaSeconds: number): void => {
       context.clearRect(0, 0, viewport.width, viewport.height);
-      context.save();
       context.globalCompositeOperation = "screen";
+      context.lineCap = "round";
 
-      drops.forEach((drop) => {
+      for (const drop of drops) {
         if (deltaSeconds > 0) {
           updateDrop(drop, deltaSeconds, viewport.width, viewport.height);
         }
 
-        drawDrop(context, drop);
-      });
+        if (!isDropVisible(drop, viewport.width, viewport.height)) {
+          continue;
+        }
 
-      context.restore();
+        drawDrop(context, drop);
+      }
+
+      context.globalCompositeOperation = "source-over";
     };
 
     /**
@@ -222,8 +265,15 @@ export const animation: BackgroundAnimation = {
         lastFrameTimestamp = timestamp;
       }
 
+      const elapsedMilliseconds = timestamp - lastFrameTimestamp;
+
+      if (elapsedMilliseconds < MINIMUM_FRAME_INTERVAL_MS) {
+        animationFrameId = requestAnimationFrame(tick);
+        return;
+      }
+
       const deltaSeconds = Math.min(
-        (timestamp - lastFrameTimestamp) / 1000,
+        elapsedMilliseconds / 1000,
         0.05,
       );
       lastFrameTimestamp = timestamp;
