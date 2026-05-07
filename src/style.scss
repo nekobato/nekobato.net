@@ -67,6 +67,7 @@ main {
   text-align: left;
   font-size: 14px;
   overflow-y: scroll;
+  overscroll-behavior-y: none;
   font-family: PixelMplus12;
   color: var(--color-grey-700);
   -ms-overflow-style: none; /* IE and Edge */
