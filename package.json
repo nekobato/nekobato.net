@@ -32,7 +32,13 @@
   },
   "pnpm": {
     "overrides": {
+      "miniflare>undici": "7.29.1",
       "yaml": "2.8.3"
+    }
+  },
+  "overrides": {
+    "miniflare": {
+      "undici": "7.29.1"
     }
   }
 }
