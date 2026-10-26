@@ -22,13 +22,13 @@
   },
   "homepage": "https://github.com/nekobato/nekobato.net#readme",
   "devDependencies": {
-    "@cloudflare/workers-types": "5.20261011.1",
+    "@cloudflare/workers-types": "5.20261018.1",
     "dayjs": "1.11.23",
-    "sass-embedded": "1.105.1",
+    "sass-embedded": "1.105.2",
     "typescript": "7.0.2",
     "vite": "8.3.4",
     "vite-plugin-ejs": "2.0.0",
-    "wrangler": "4.149.0"
+    "wrangler": "4.151.1"
   },
   "pnpm": {
     "overrides": {
