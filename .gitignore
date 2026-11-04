@@ -7,3 +7,7 @@ dist
 .cache
 .parcel-cache
 .env
+.void/
+.cloudflare/
+.wrangler/
+.void-wrangler.jsonc

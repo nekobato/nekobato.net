@@ -4,12 +4,12 @@
   "compatibility_date": "2025-12-15",
   "observability": {
     "issues": {
-      "enabled": true
-    }
+      "enabled": true,
+    },
   },
-  // Vite build output served as static assets via Workers Assets binding
+  // Void's prerendered pages served through the existing Workers Assets binding.
   "assets": {
-    "directory": "./dist",
-    "binding": "ASSETS"
-  }
+    "directory": "./dist/client",
+    "binding": "ASSETS",
+  },
 }

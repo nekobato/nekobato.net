@@ -2,13 +2,14 @@
   "name": "nekobato.net",
   "version": "2.0.1",
   "packageManager": "pnpm@10.11.1",
+  "type": "module",
   "description": "nekobato.net",
-  "source": "src/index.html",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
-    "deploy": "wrangler deploy"
+    "typecheck": "tsc --noEmit && node scripts/typecheck-vue.cjs --noEmit",
+    "build": "pnpm typecheck && vite build",
+    "deploy": "wrangler deploy --config wrangler.jsonc"
   },
   "repository": {
     "type": "git",
@@ -23,11 +24,16 @@
   "homepage": "https://github.com/nekobato/nekobato.net#readme",
   "devDependencies": {
     "@cloudflare/workers-types": "5.20261025.1",
+    "@hono/node-server": "2.1.6",
+    "@void/vue": "1.5.0",
     "dayjs": "1.11.23",
     "sass-embedded": "1.106.1",
     "typescript": "7.0.2",
+    "typescript-vue": "npm:typescript@6.0.3",
     "vite": "8.3.5",
-    "vite-plugin-ejs": "2.0.0",
+    "void": "1.5.0",
+    "vue": "3.5.44",
+    "vue-tsc": "3.3.14",
     "wrangler": "4.152.0"
   },
   "pnpm": {
