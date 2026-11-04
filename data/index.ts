@@ -1,15 +1,26 @@
 import dayjs from "dayjs";
-import { readFileSync } from "node:fs";
+import metaData from "./meta.json";
+import linkData from "./links.json";
+import portfolioData from "./portfolio.json";
+import activityData from "./activities.json";
+import resumeEducations from "./resume-edu.json";
+import resumeExperiences from "./resume-exp.json";
 
-const readJson = (relativePath) =>
-  JSON.parse(readFileSync(new URL(relativePath, import.meta.url), "utf-8"));
+export interface PortfolioItem {
+  title: string;
+  url: string;
+  description?: string;
+  descriptionHtml?: string;
+  badges: { alt: string; src: string }[];
+}
 
-export const meta = readJson("./meta.json");
-export const links = readJson("./links.json");
-export const portfolio = readJson("./portfolio.json");
-export const activities = readJson("./activities.json");
-const resumeEducations = readJson("./resume-edu.json");
-const resumeExperiences = readJson("./resume-exp.json");
+export const meta = metaData;
+export const links = linkData;
+export const portfolio: {
+  works: PortfolioItem[];
+  components: PortfolioItem[];
+} = portfolioData;
+export const activities = activityData;
 
 const experienceYears = dayjs().diff("2012-04-01", "year");
 

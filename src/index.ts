@@ -1,12 +1,13 @@
 import { initializeRandomBackground } from "./bg-animations";
 import "./style.scss";
 
-const desktopLayoutMediaQuery = window.matchMedia("(min-width: 641px)");
-
 /**
- * Initializes the page scroll synchronization and the background animation.
+ * Starts browser behavior after hydration and returns its lifecycle cleanup.
  */
-const initializePage = (): void => {
+export const initializePage = (): (() => void) => {
+  const desktopLayoutMediaQuery = window.matchMedia("(min-width: 641px)");
+  const events = new AbortController();
+  const { signal } = events;
   const canvas = document.querySelector<HTMLCanvasElement>("#bg-animation");
   const main = document.querySelector<HTMLElement>("#main");
   const dummyContent = document.querySelector<HTMLDivElement>("#dummy-content");
@@ -53,15 +54,21 @@ const initializePage = (): void => {
   };
 
   syncBackground();
-  window.addEventListener("pagehide", stopBackground, { once: true });
-  desktopLayoutMediaQuery.addEventListener("change", syncBackground);
+  window.addEventListener("pagehide", stopBackground, { signal });
+  window.addEventListener("pageshow", syncBackground, { signal });
+  desktopLayoutMediaQuery.addEventListener("change", syncBackground, {
+    signal,
+  });
 
   if (!main || !dummyContent) {
-    document.querySelector("body")?.classList.remove("loading");
-    return;
+    return () => {
+      events.abort();
+      stopBackground();
+    };
   }
 
   let syncing = false;
+  let scrollFrame = 0;
 
   /**
    * Clears the document scroll proxy used by the desktop panel layout.
@@ -93,7 +100,7 @@ const initializePage = (): void => {
     syncing = true;
     const ratio = window.scrollY / window.innerHeight;
     main.scrollTo(0, ratio * main.clientHeight);
-    requestAnimationFrame(() => {
+    scrollFrame = requestAnimationFrame(() => {
       syncing = false;
     });
   };
@@ -106,24 +113,45 @@ const initializePage = (): void => {
     syncing = true;
     const ratio = main.scrollTop / main.clientHeight;
     window.scrollTo({ top: ratio * window.innerHeight });
-    requestAnimationFrame(() => {
+    scrollFrame = requestAnimationFrame(() => {
       syncing = false;
     });
   };
 
-  window.addEventListener("scroll", syncFromWindow, { passive: true });
-  main.addEventListener("scroll", syncFromMain, { passive: true });
-  window.addEventListener("resize", setDummyContentHeight);
-  desktopLayoutMediaQuery.addEventListener("change", setDummyContentHeight);
+  window.addEventListener("scroll", syncFromWindow, { passive: true, signal });
+  main.addEventListener("scroll", syncFromMain, { passive: true, signal });
+  window.addEventListener("resize", setDummyContentHeight, { signal });
+  desktopLayoutMediaQuery.addEventListener("change", setDummyContentHeight, {
+    signal,
+  });
+  main.addEventListener("toggle", setDummyContentHeight, {
+    capture: true,
+    signal,
+  });
+  main.addEventListener("load", setDummyContentHeight, {
+    capture: true,
+    signal,
+  });
 
-  document.addEventListener("visibilitychange", () => {
-    if (document.hidden) {
-      syncing = false;
-    }
+  document.addEventListener(
+    "visibilitychange",
+    () => {
+      if (document.hidden) {
+        syncing = false;
+      }
+    },
+    { signal },
+  );
+
+  void document.fonts.ready.then(() => {
+    if (!signal.aborted) setDummyContentHeight();
   });
 
   setDummyContentHeight();
-  document.querySelector("body")?.classList.remove("loading");
+  return () => {
+    events.abort();
+    cancelAnimationFrame(scrollFrame);
+    stopBackground();
+    clearDummyContentHeight();
+  };
 };
-
-document.addEventListener("DOMContentLoaded", initializePage);
