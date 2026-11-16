@@ -23,18 +23,18 @@
   },
   "homepage": "https://github.com/nekobato/nekobato.net#readme",
   "devDependencies": {
-    "@cloudflare/workers-types": "5.20261101.1",
+    "@cloudflare/workers-types": "5.20261108.1",
     "@hono/node-server": "2.1.6",
-    "@void/vue": "1.5.0",
+    "@void/vue": "1.6.2",
     "dayjs": "1.11.23",
-    "sass-embedded": "1.107.1",
+    "sass-embedded": "1.108.1",
     "typescript": "7.0.2",
     "typescript-vue": "npm:typescript@6.0.3",
-    "vite": "8.3.5",
-    "void": "1.5.0",
-    "vue": "3.5.44",
+    "vite": "8.3.6",
+    "void": "1.6.2",
+    "vue": "3.5.45",
     "vue-tsc": "3.3.14",
-    "wrangler": "4.156.1"
+    "wrangler": "4.158.0"
   },
   "pnpm": {
     "overrides": {
