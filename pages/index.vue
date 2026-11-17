@@ -70,6 +70,27 @@ onUnmounted(() => disposePage?.());
       <PortfolioList :items="portfolio.components" />
     </section>
     <ResumeDetails />
+    <nav class="app-policies" aria-label="アプリの情報">
+      <a href="/apps/jihonair/privacy/">ジホネアのプライバシーポリシー</a>
+    </nav>
   </main>
   <footer><small>&copy; 2009-2026 nekobato.net.</small></footer>
 </template>
+
+<style scoped>
+.app-policies {
+  padding: 16px;
+  border-top: 1px solid var(--color-black-t200);
+}
+
+.app-policies a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.app-policies a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+</style>
