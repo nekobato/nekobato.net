@@ -71,7 +71,7 @@ onUnmounted(() => disposePage?.());
     </section>
     <ResumeDetails />
     <nav class="app-policies" aria-label="アプリの情報">
-      <a href="/apps/jihonair/privacy/">ジホネアのプライバシーポリシー</a>
+      <a href="/apps/jihonair/privacy/">ジホウニアのプライバシーポリシー</a>
     </nav>
   </main>
   <footer><small>&copy; 2009-2026 nekobato.net.</small></footer>
